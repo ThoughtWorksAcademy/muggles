@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>muggles</title>
+    <link href="../../bower_components/components-bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="header">
+                <nav>
+                    <ul class="nav nav-pills pull-right">
+                        <li role="presentation" class="active"><a href="#">Home</a></li>
+                        <li role="presentation"><a href="#">About</a></li>
+                        <li role="presentation"><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+                <h3 class="text-muted">muggles</h3>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row show-space">
+        <div class="col-lg-12">
+            <div class="row show-space">
+                <form class="form-signin col-lg-5">
+                    <h2 class="form-signin-heading">面向对象课程修改</h2>
+                    <label for="inputEmail" class="">课程名称</label>
+                    <input type="email" id="inputEmail" class="form-control" placeholder="" value="面向对象" required autofocus >
+                    <label class="">面向对象课程checkpoint管理</label>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>checkpoint</th>
+                                <th>所属分类</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>多态</td>
+                            <td>面向对象三原则</td>
+                            <td><a href="#">删除</a></td>
+                        </tr>
+
+                        <tr>
+                            <td>2</td>
+                            <td>
+                                <select class="form-control">
+                                    <option></option>
+                                    <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                                <option>5</option>
+                                </select>
+                            </td>
+                            <td>面向对象三原则</td>
+                            <td><a href="#">添加</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <a href="file:///Users/twer/Documents/git-projects/muggles/views/admin/course.html" class="btn btn-default">确认修改</a>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; ThoughtWorks academy</p>
+    </footer>
+</div>
+
+</body>
+</html>
