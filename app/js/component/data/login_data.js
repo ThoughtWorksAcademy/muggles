@@ -6,8 +6,9 @@ define(function (require) {
   function login () {
 
     this.handleLogin = function (event, data) {
-      $.ajax('/api/login', {
-        method: 'PUT'
+      $.ajax('/api/users', {
+        method: 'POST',
+        data: data
       })
       .fail(function() {
         console.log('登录失败');
