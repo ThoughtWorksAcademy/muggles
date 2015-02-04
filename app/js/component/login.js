@@ -16,11 +16,9 @@ define(function (require) {
       console.log(userName.val());
       console.log(userPassword.val());
       this.trigger('uiLogin', {
-        data: {
-          userName: userName,
-          userPassword: userPassword
-        }
-      });
+        userName: userName.val(),
+        userPassword : userPassword.val()
+        });
     };
 
     this.after('initialize', function () {
