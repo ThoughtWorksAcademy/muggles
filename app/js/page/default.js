@@ -7,7 +7,7 @@ define(function (require) {
    */
 
   // var MyComponent = require('component/my_component');
-  var Login = require('component/login');
+  var Login = require('component/ui/login');
   var LoginData = require('component/data/loginData');
 
   /**
