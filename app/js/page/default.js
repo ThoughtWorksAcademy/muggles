@@ -7,6 +7,7 @@ define(function (require) {
    */
 
   // var MyComponent = require('component/my_component');
+  var Login = require('component/login');
 
   /**
    * Module exports
@@ -19,6 +20,7 @@ define(function (require) {
    */
 
   function initialize() {
+    Login.attachTo('.js-login');
     // MyComponent.attachTo(document);
   }
 
