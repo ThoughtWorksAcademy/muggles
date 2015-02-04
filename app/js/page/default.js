@@ -7,8 +7,8 @@ define(function (require) {
    */
 
   // var MyComponent = require('component/my_component');
-  var Login = require('component/ui/login');
-  var LoginData = require('component/data/loginData');
+  var LoginView = require('component/ui/login_view');
+  var LoginData = require('component/data/login_data');
 
   /**
    * Module exports
@@ -21,7 +21,7 @@ define(function (require) {
    */
 
   function initialize() {
-    Login.attachTo('.js-login');
+    LoginView.attachTo('.js-login');
     LoginData.attachTo(document);
     // MyComponent.attachTo(document);
   }
