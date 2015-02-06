@@ -13,8 +13,6 @@ define(function (require) {
       var userName = this.select('userName');
       var userPassword = this.select('userPassword');
 
-      console.log(userName.val());
-      console.log(userPassword.val());
       this.trigger('uiLogin', {
         userName: userName.val(),
         userPassword : userPassword.val()
