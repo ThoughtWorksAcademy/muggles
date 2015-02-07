@@ -1,6 +1,6 @@
 {
   "name": "muggles",
-  "dedcription":"思沃学院教学运营支撑系统"
+  "dedcription": "思沃学院教学运营支撑系统",
   "version": "0.0.0",
   "devDependencies": {
     "generator-flight": "~0.8.0",
