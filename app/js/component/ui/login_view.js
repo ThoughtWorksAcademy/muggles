@@ -5,17 +5,17 @@ define(function (require) {
 
  function login () {
     this.defaultAttrs({
-      userName: '#userName',
-      userPassword: '#userPassword'
+      username: '#username',
+      password: '#password'
     });
 
     this.handleLogin = function (event) {
-      var userName = this.select('userName');
-      var userPassword = this.select('userPassword');
+      var username = this.select('username');
+      var password = this.select('password');
 
       this.trigger('uiLogin', {
-        userName: userName.val(),
-        userPassword : userPassword.val()
+        username: username.val(),
+        password : password.val()
         });
     };
 

@@ -6,7 +6,8 @@ define(function (require) {
   function login () {
 
     this.handleLogin = function (event, data) {
-      $.ajax('/api/users', {
+        console.log(data);
+      $.ajax('/api/users/login', {
         method: 'POST',
         data: data
       })
@@ -16,7 +17,6 @@ define(function (require) {
 
       })
       .done(function(data) {
-        console.log(data);
         console.log('登陆成功');
       });
     };
