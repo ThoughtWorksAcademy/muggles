@@ -1,36 +1,29 @@
 define(function (require) {
 
-  'use strict';
+    'use strict';
 
-  /**
-   * Module dependencies
-   */
-
-  // var MyComponent = require('component/my_component');
-  var LoginView = require('component/ui/login_view');
-  var LoginData = require('component/data/login_data');
+    var LoginView = require('component/ui/login_view');
+    var LoginData = require('component/data/login_data');
 
     var SignUpView = require('component/ui/signup_view');
     var SignUpData = require('component/data/signup_data');
 
-  /**
-   * Module exports
-   */
+    var CheckPointView = require('component/ui/checkpoint_view');
+    var CheckPointData = require('component/data/checkpoint_data');
 
-  return initialize;
+    return initialize;
 
-  /**
-   * Module function
-   */
+    function initialize() {
 
-  function initialize() {
-    LoginView.attachTo('.js-login');
-    LoginData.attachTo(document);
+        CheckPointData.attachTo(document);
+        CheckPointView.attachTo('.js-checkpoint');
 
-  SignUpView.attachTo('.js-signup');
-  SignUpData.attachTo(document);
+        LoginView.attachTo('.js-login');
+        LoginData.attachTo(document);
 
-      // MyComponent.attachTo(document);
-  }
+        SignUpView.attachTo('.js-signup');
+        SignUpData.attachTo(document);
+
+    }
 
 });

@@ -10,6 +10,13 @@ gulp.task('livereload-server', function () {
     if (err) { return console.log(err); }
   });
 });
+var compiler = require('gulp-hogan-compile');
+
+gulp.task('templates', function() {
+    gulp.src('app/views/**/*.html')
+        .pipe(compiler('templates.js'))
+        .pipe(gulp.dest('app/js/'));
+});
 
 gulp.task('css', function () {
   gulp.src('app/**/*.css').pipe(refresh(server));

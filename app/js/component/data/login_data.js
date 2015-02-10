@@ -1,28 +1,29 @@
 define(function (require) {
-  var defineComponent = require('flight/lib/component');
+    var defineComponent = require('flight/lib/component');
 
-  return defineComponent(login);
+    return defineComponent(login);
 
-  function login () {
+    function login() {
 
-    this.handleLogin = function (event, data) {
-        console.log(data);
-      $.ajax('/api/users/login', {
-        method: 'POST',
-        data: data
-      })
-      .fail(function() {
-        console.log('登录失败');
-        console.log(data);
+        this.handleLogin = function (event, data) {
+            console.log('dsad');
+            console.log(data);
+            $.ajax('/api/users/login', {
+                method: 'POST',
+                data: data
+            })
+                .fail(function () {
+                    console.log('登录失败');
+                    console.log(data);
 
-      })
-      .done(function(data) {
-        console.log('登陆成功');
-      });
-    };
+                })
+                .done(function (data) {
+                    console.log('登陆成功');
+                });
+        };
 
-    this.after('initialize', function () {
-      this.on('uiLogin', this.handleLogin);
-    });
-  }
+        this.after('initialize', function () {
+            this.on('uiLogin', this.handleLogin);
+        });
+    }
 });

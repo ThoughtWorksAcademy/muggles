@@ -3,23 +3,25 @@ define(function (require) {
 
     return defineComponent(login);
 
-    function login () {
+    function login() {
 
         this.handleSignUp = function (event, data) {
-            console.log(data);
+            console.log('there');
             $.ajax('/api/users/signup', {
                 method: 'POST',
                 data: data
             })
-                .fail(function() {
-                    console.log('注册成功');
+                .fail(function () {
+                    console.log('注册失败');
                     console.log(data);
 
                 })
-                .done(function(data) {
+                .done(function (data) {
                     console.log(data);
-
-                    console.log('注册失败');
+                    if( data.redirect) {
+                        console.log(data.redirect);
+                        location = data.redirect;
+                    }
                 });
         };
 

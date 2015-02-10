@@ -1,9 +1,9 @@
 define(function (require) {
     var defineComponent = require('flight/lib/component');
 
-    return defineComponent(login);
+    return defineComponent(signup);
 
-    function login () {
+    function signup () {
         this.defaultAttrs({
             username: '#username',
             password: '#password'

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="author" content="">
@@ -13,34 +13,62 @@
     <link rel="stylesheet" href="/bower_components/components-bootstrap/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="/css/main.css">
     <link href="../css/signin.css" rel="stylesheet">
-  </head>
-  <body>
-  <form class="form-signin js-signup">
-      <h2 class="form-signin-heading">注册</h2>
-      <label for="username" class="sr-only">用户名</label>
-      <input type="email" id="username" class="form-control" placeholder="用户名" required autofocus>
-      <label for="password" class="sr-only">密码</label>
-      <input type="password" id="password" class="form-control js-signup" placeholder="密码" required>
-      <a id=signup class="btn btn-default">注册新用户</a>
-  </form>
-    <!--Hello world-->
-    <!--<div class="container">-->
-      <!--<form class="form-signin js-login">-->
-        <!--<h2 class="form-signin-heading">登陆</h2>-->
-        <!--<label for="username" class="sr-only">Email address</label>-->
-        <!--<input type="email" id="username" class="form-control" placeholder="用户名" required autofocus>-->
-        <!--<label for="password" class="sr-only">Password</label>-->
-        <!--<input type="password" id="password" class="form-control" placeholder="密码" required>-->
-        <!--<a id="login" class="btn btn-default">登陆</a>-->
-      <!--</form>-->
-    <!--</div>-->
-    <!--[if lt IE 9]>
-    <script src="/bower_components/es5-shim/es5-shim.js"></script>
-    <script src="/bower_components/es5-shim/es5-sham.js"></script>
-    <![endif]-->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/components-bootstrap/js/bootstrap.min.js"></script>
-    <script src="/bower_components/requirejs/require.js" data-main="js/main.js"></script>
-
-  </body>
+</head>
+<body>
+<form class="form-signin js-signup">
+<h2 class="form-signin-heading">注册</h2>
+<label for="username" class="sr-only">用户名</label>
+<input type="email" id="username" class="form-control" placeholder="用户名" required autofocus>
+<label for="password" class="sr-only">密码</label>
+<input type="password" id="password" class="form-control js-signup" placeholder="密码" required>
+<a id=signup class="btn btn-default">注册新用户</a>
+<div id="massage"></div>
+</form>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">面向对象课程 Trainer:xxx</div>
+            <div class="panel-body">
+                <div class="row show-space">
+                    <div class="col-lg-12">
+                        <ul class="nav nav-tabs nav-justified">
+                            <li role="presentation" class="active"><a href="#">CheckPoint</a></li>
+                            <li role="presentation">
+                                <a href="file:///Users/twer/Documents/git-projects/muggles/views/homeworks.html">HomeWorks</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <br><br>
+                <div class="js-checkpoint">
+                    <ul class="js-checkpoint-list">
+                    </ul>
+                </div>
+                <a href="file:///Users/twer/Documents/git-projects/muggles/views/coach/courses.html"
+                   class="btn btn-default pull-right show-space">返回</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Hello world-->
+<!--<div class="container">-->
+<!--<form class="form-signin js-login">-->
+<!--<h2 class="form-signin-heading">登陆</h2>-->
+<!--<label for="username" class="sr-only">Email address</label>-->
+<!--<input type="email" id="username" class="form-control" placeholder="用户名" required autofocus>-->
+<!--<label for="password" class="sr-only">Password</label>-->
+<!--<input type="password" id="password" class="form-control" placeholder="密码" required>-->
+<!--<a id="login" class="btn btn-default">登陆</a>-->
+<!--</form>-->
+<!--</div>-->
+<!--[if lt IE 9]>
+<script src="/bower_components/es5-shim/es5-shim.js"></script>
+<script src="/bower_components/es5-shim/es5-sham.js"></script>
+<![endif]-->
+<script src="./bower_components/jquery/dist/jquery.js"></script>
+<script src="./bower_components/components-bootstrap/js/bootstrap.min.js"></script>
+<script src="./bower_components/requirejs/require.js" data-main="js/main.js"></script>
+<script src="bower_components/hogan/lib/template.js"></script>
+<script src="bower_components/hogan/lib/compiler.js"></script>
+</body>
 </html>

@@ -1,26 +1,28 @@
 define(function (require) {
-  var defineComponent = require('flight/lib/component');
+    var defineComponent = require('flight/lib/component');
 
-  return defineComponent(login);
+    return defineComponent(login);
 
- function login () {
-    this.defaultAttrs({
-      username: '#username',
-      password: '#password'
-    });
+    function login() {
 
-    this.handleLogin = function (event) {
-      var username = this.select('username');
-      var password = this.select('password');
+        this.handleLogin = function (event, data) {
+            console.log(data);
+            $.ajax('/api/users/login', {
+                method: 'POST',
+                data: data
+            })
+                .fail(function () {
+                    console.log('登录失败');
+                    console.log(data);
 
-      this.trigger('uiLogin', {
-        username: username.val(),
-        password : password.val()
+                })
+                .done(function (data) {
+                    console.log('登陆成功');
+                });
+        };
+
+        this.after('initialize', function () {
+            this.on('uiLogin', this.handleLogin);
         });
-    };
-
-    this.after('initialize', function () {
-      this.on('#login', 'click', this.handleLogin);
-    });
-  }
+    }
 });
