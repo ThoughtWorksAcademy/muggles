@@ -23,10 +23,11 @@ define(function (require) {
             var groupedCheckpoint = this.groupCheckpoints(checkpoints);
             var checkPointTemplate = Hogan.compile(
                 '{{#groups}}' +
-                    //'{{#groupedCheckpoint}}' +
                 '<p>{{groupName}}</p>' +
-                '{{#checkpoints}}<li><input  id="{{_id}}" class="checkpoint-item" type="checkbox">{{name}}</li>{{/checkpoints}}' +
-                    //'{{/groupedCheckpoint}}' +
+                '{{#checkpoints}}' +
+                '{{#checked}}<li><input id="{{_id}}" class="checkpoint-item" type="checkbox" checked="true" >{{name}}</li>{{/checked}}' +
+                '{{^checked}}<li><input id="{{_id}}" class="checkpoint-item" type="checkbox">{{name}}</li>{{/checked}}' +
+                '{{/checkpoints}}' +
                 '{{/groups}}'
             );
             return checkPointTemplate.render(
