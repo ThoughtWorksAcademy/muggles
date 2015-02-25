@@ -1,6 +1,7 @@
 define(function (require) {
     var defineComponent = require('flight/lib/component');
     var _ = require('lodash/lodash');
+    var checkpointTemplate = require('page/template').checkpoint;
 
     return defineComponent(checkpoint);
 
@@ -21,21 +22,7 @@ define(function (require) {
 
         this.renderCheckpoint = function (checkpoints) {
             var groupedCheckpoint = this.groupCheckpoints(checkpoints);
-            var checkPointTemplate = Hogan.compile(
-                '{{#groups}}' +
-                '<p>{{groupName}}</p>' +
-                '{{#checkpoints}}' +
-                '{{#disable}}'+
-                '{{#checked}}<li><input id="{{_id}}" class="checkpoint-item" type="checkbox" checked="true" disabled="true">{{name}}</li>{{/checked}}' +
-                '{{^checked}}<li><input id="{{_id}}" class="checkpoint-item" type="checkbox" disabled="true">{{name}}</li>{{/checked}}' +
-                '{{/disable}}'+
-                '{{^disable}}'+
-                '{{#checked}}<li><input id="{{_id}}" class="checkpoint-item" type="checkbox" checked="true" >{{name}}</li>{{/checked}}' +
-                '{{^checked}}<li><input id="{{_id}}" class="checkpoint-item" type="checkbox">{{name}}</li>{{/checked}}' +
-                '{{/disable}}'+
-                '{{/checkpoints}}' +
-                '{{/groups}}'
-            );
+            var checkPointTemplate = Hogan.compile(checkpointTemplate);
             return checkPointTemplate.render(
                 {groups: groupedCheckpoint});
         };
