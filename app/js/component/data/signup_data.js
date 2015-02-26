@@ -10,19 +10,17 @@ define(function (require) {
             $.ajax('/api/users/signup', {
                 method: 'POST',
                 data: data
-            })
-                .fail(function () {
-                    console.log('注册失败');
-                    console.log(data);
+            }).fail(function () {
+                console.log('注册失败');
+                console.log(data);
 
-                })
-                .done(function (data) {
-                    console.log(data);
-                    if( data.redirect) {
-                        console.log(data.redirect);
-                        location = data.redirect;
-                    }
-                });
+            }).done(function (data) {
+                console.log(data);
+                if (data.redirect) {
+                    console.log(data.redirect);
+                    location = data.redirect;
+                }
+            });
         };
 
         this.after('initialize', function () {

@@ -17,7 +17,7 @@ define(function (require) {
         this.handleChecked = function () {
             var checkedIdList = [];
             this.select('checkPointCheck').toArray().forEach(function (el) {
-                if(el.checked) {
+                if (el.checked) {
                     checkedIdList.push({id: el.getAttribute('id')});
                 }
             });

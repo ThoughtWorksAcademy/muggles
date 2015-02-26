@@ -3,7 +3,7 @@ define(function (require) {
 
     return defineComponent(signup);
 
-    function signup () {
+    function signup() {
         this.defaultAttrs({
             username: '#username',
             password: '#password'
@@ -14,7 +14,7 @@ define(function (require) {
             var password = this.select('password');
             this.trigger('uiSignUp', {
                 username: username.val(),
-                password : password.val()
+                password: password.val()
             });
         };
 

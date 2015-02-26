@@ -22,7 +22,6 @@ define(function (require) {
         CheckPointView.attachTo('.js-checkpoint');
 
 
-
         SignUpView.attachTo('.js-signup');
         SignUpData.attachTo(document);
 

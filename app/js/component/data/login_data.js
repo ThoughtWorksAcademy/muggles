@@ -14,9 +14,9 @@ define(function (require) {
                 console.log(data);
 
             }).done(function (data) {
-                    console.log('登陆成功');
-                    location = 'views/course.html';
-                });
+                console.log('登陆成功');
+                location = 'views/course.html';
+            });
         };
 
         this.after('initialize', function () {
