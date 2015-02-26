@@ -10,15 +10,13 @@ define(function (require) {
             $.ajax('/api/users/login', {
                 method: 'POST',
                 data: data
-            })
-                .fail(function () {
-                    console.log('登录失败');
-                    console.log(data);
+            }).fail(function () {
+                console.log('登录失败');
+                console.log(data);
 
-                })
-                .done(function (data) {
-                    console.log('登陆成功');
-                });
+            }).done(function (data) {
+                console.log('登陆成功');
+            });
         };
 
         this.after('initialize', function () {
