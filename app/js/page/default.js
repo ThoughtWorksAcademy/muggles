@@ -15,11 +15,13 @@ define(function (require) {
 
     function initialize() {
 
+        LoginView.attachTo('.js-login');
+        LoginData.attachTo(document);
+        
         CheckPointData.attachTo(document);
         CheckPointView.attachTo('.js-checkpoint');
 
-        LoginView.attachTo('.js-login');
-        LoginData.attachTo(document);
+
 
         SignUpView.attachTo('.js-signup');
         SignUpData.attachTo(document);
