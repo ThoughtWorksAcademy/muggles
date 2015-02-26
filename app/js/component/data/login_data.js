@@ -17,6 +17,7 @@ define(function (require) {
                 })
                 .done(function (data) {
                     console.log('登陆成功');
+                    location = 'views/course.html';
                 });
         };
 

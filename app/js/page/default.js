@@ -17,7 +17,7 @@ define(function (require) {
 
         LoginView.attachTo('.js-login');
         LoginData.attachTo(document);
-        
+
         CheckPointData.attachTo(document);
         CheckPointView.attachTo('.js-checkpoint');
 

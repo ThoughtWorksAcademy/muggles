@@ -7,6 +7,7 @@ define(function (require) {
 
         this.handleLogin = function (event, data) {
             console.log(data);
+            console.log('登录事件触发');
             $.ajax('/api/users/login', {
                 method: 'POST',
                 data: data
@@ -15,12 +16,15 @@ define(function (require) {
                 console.log(data);
 
             }).done(function (data) {
+                location = 'views/course.html';
                 console.log('登陆成功');
             });
         };
 
         this.after('initialize', function () {
-            this.on('uiLogin', this.handleLogin);
+            this.on('#signup', 'click', this.handleLogin);
+
+            this.on('#uiLogin', 'click', this.handleLogin);
         });
     }
 });

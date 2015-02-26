@@ -12,7 +12,6 @@ define(function (require) {
         this.handleLogin = function (event) {
             var username = this.select('username');
             var password = this.select('password');
-            console.log('登录事件触发');
             this.trigger('uiSignUp', {
                 username: username.val(),
                 password : password.val()
