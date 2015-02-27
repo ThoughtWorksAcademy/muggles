@@ -16,7 +16,7 @@ define(function (require) {
                 console.log(data);
 
             }).done(function (data) {
-                location = 'views/course.html';
+                console.log(data);
                 console.log('登陆成功');
             });
         };

@@ -22,5 +22,8 @@
     "test": "karma start --single-run",
     "watch": "npm run server > server.log & npm run livereload",
     "watch-test": "karma start"
+  },
+  "dependencies": {
+    "gulp-hogan-compile": "^0.4.1"
   }
 }
