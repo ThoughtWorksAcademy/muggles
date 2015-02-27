@@ -1,6 +1,8 @@
 define(function (require) {
 
     'use strict';
+    var SwitchPage = require('component/ui/switch_page');
+    var Authenticate = require('component/data/authenticate_user');
 
     var LoginView = require('component/ui/login_view');
     var LoginData = require('component/data/login_data');
@@ -14,6 +16,8 @@ define(function (require) {
     return initialize;
 
     function initialize() {
+        SwitchPage.attachTo(document);
+        Authenticate.attachTo(document);
 
         LoginView.attachTo('.js-login');
         LoginData.attachTo(document);
