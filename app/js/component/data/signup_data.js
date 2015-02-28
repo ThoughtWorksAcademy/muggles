@@ -6,7 +6,6 @@ define(function (require) {
     function login() {
 
         this.handleSignUp = function (event, data) {
-            console.log('there');
             $.ajax('/api/users/signup', {
                 method: 'POST',
                 data: data

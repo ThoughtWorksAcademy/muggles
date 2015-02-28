@@ -20,6 +20,7 @@ define(function (require) {
         };
 
         this.after('initialize', function () {
+            console.log('init login data');
             this.on('uiLogin', this.handleLogin);
         });
     }

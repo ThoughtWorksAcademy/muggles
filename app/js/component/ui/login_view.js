@@ -4,9 +4,11 @@ define(function (require) {
     return defineComponent(login);
 
     function login() {
-
+        this.defaultAttrs({
+            uiLogin: '#uiLogin'
+        });
         this.handleLogin = function (event, data) {
-            console.log(data);
+
             console.log('登录事件触发');
             $.ajax('/api/users/login', {
                 method: 'POST',
@@ -23,8 +25,8 @@ define(function (require) {
 
         this.after('initialize', function () {
             this.on('#signup', 'click', this.handleLogin);
-
-            this.on('#uiLogin', 'click', this.handleLogin);
+            this.on(document, 'click',
+                { 'uiLogin' :this.handleLogin});
         });
     }
 });

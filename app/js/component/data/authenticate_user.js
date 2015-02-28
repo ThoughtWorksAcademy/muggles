@@ -11,7 +11,12 @@ define(function (require) {
             this.trigger('uiSwitchPage', {name: 'loginPage'});
         };
 
+        this.authenticateUser = function(){
+            console.log('got');
+        };
         this.after('initialize', function () {
+            this.on('dataUserLogin', this.authenticateUser);
+
             this.isAuthenticatedUser();
         })
     }
