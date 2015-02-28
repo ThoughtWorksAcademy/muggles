@@ -5,21 +5,17 @@ define(function (require) {
 
     function login() {
         this.defaultAttrs({
-            uiLogin: '#uiLogin'
+            uiLogin: '#uiLogin',
+            username: '#username',
+            password: '#password'
         });
-        this.handleLogin = function (event, data) {
+        this.handleLogin = function () {
+            var username = this.select('username');
+            var password = this.select('password');
 
-            console.log('登录事件触发');
-            $.ajax('/api/users/login', {
-                method: 'POST',
-                data: data
-            }).fail(function () {
-                console.log('登录失败');
-                console.log(data);
-
-            }).done(function (data) {
-                console.log(data);
-                console.log('登陆成功');
+            this.trigger('uiLogin', {
+                username: username.val(),
+                password: password.val()
             });
         };
 
