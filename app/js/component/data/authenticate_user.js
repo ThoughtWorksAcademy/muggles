@@ -16,7 +16,6 @@ define(function (require) {
         };
         this.after('initialize', function () {
             this.on('dataUserLogin', this.authenticateUser);
-
             this.isAuthenticatedUser();
         })
     }
