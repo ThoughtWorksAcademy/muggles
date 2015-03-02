@@ -11,7 +11,7 @@ define(function (require) {
 
         this.defaultAttrs({
             'loginPage' : loginPage,
-            'appPage' : courses
+            'courses' : courses
         });
 
         this.after('initialize', function () {
