@@ -2,7 +2,7 @@ define(function (require) {
     'use strict';
 
     var templates = require('js/templates'),
-        template = templates['app'].render();
+        template = templates['courses'].render();
 
     return initialize;
 

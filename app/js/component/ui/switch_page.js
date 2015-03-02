@@ -3,7 +3,7 @@ define(function (require) {
 
     var defineComponent = require('flight/lib/component'),
         loginPage = require('../../page/login_page'),
-        appPage = require('../../page/app_page');
+        courses = require('../../page/courses');
 
     return defineComponent(switchPage);
 
@@ -11,12 +11,11 @@ define(function (require) {
 
         this.defaultAttrs({
             'loginPage' : loginPage,
-            'appPage' : appPage
+            'appPage' : courses
         });
 
         this.after('initialize', function () {
            this.on('uiSwitchPage', function(e, page) {
-               console.log(page.name);
                this.attr[page.name]();
            })
         });

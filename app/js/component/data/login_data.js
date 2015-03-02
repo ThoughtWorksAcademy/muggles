@@ -16,7 +16,7 @@ define(function (require) {
                 console.log(data);
 
                 console.log('登陆成功');
-                self.trigger('uiSwitchPage', {name: 'appPage'});
+                self.trigger('uiSwitchPage', {name: 'courses'});
                 //location = 'views/courses.html';
             });
         };
