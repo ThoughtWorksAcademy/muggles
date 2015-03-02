@@ -22,8 +22,8 @@ define(function (require) {
 
         this.renderCheckpoint = function (checkpoints) {
             var groupedCheckpoint = this.groupCheckpoints(checkpoints);
-            var checkPointTemplate = Hogan.compile(checkpointTemplate);
-            return checkPointTemplate.render(
+            var checkPoints = Hogan.compile(checkpointTemplate);
+            return checkPoints.render(
                 {groups: groupedCheckpoint});
         };
 

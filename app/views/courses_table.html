@@ -1,0 +1,19 @@
+<table class="table">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>课程名称</th>
+        <th>Trainer</th>
+        <th>Sponsors</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#courses}}
+    <tr>
+        <td>{{course.name}}</td>
+        <td>{{course.trainer}}</td>
+        <td>{{course.sponsor}}</td>
+    </tr>
+    {{/courses}}
+    </tbody>
+</table>
