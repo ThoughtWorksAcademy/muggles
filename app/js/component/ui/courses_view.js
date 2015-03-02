@@ -7,25 +7,31 @@ define(function (require) {
 
     function courses() {
         this.defaultAttrs({
-            coursePanel : '.courses-panel'
+            coursePanel: '.courses-tbody'
         });
 
         this.renderCourses = function () {
             var courses = [
-                {name: '1',
-                    trainer:'1',
-                    sponsor:'1'},
-                {name: '1',
-                    trainer:'1',
-                    sponsor:'1'},
-                {name: '1',
-                    trainer:'1',
-                    sponsor:'1'}
+                {
+                    name: '1',
+                    trainer: '1',
+                    sponsor: '1'
+                },
+                {
+                    name: '1',
+                    trainer: '1',
+                    sponsor: '1'
+                },
+                {
+                    name: '1',
+                    trainer: '1',
+                    sponsor: '1'
+                }
             ];
 
-            var coursesTemplate = template.render({courses: courses});
-            console.log(coursesTemplate);
-            this.select('coursePanel').append(coursesTemplate);
+            var html = template.render({courses: courses});
+
+            this.select('coursePanel').append(html);
         };
 
         this.after('initialize', function () {
