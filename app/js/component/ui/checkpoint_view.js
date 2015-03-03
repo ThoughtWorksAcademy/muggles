@@ -28,8 +28,6 @@ define(function (require) {
         this.after('initialize', function () {
             this.on(document, 'dataCheckpointServed', this.renderCheckpoints);
             this.trigger('uiCheckpointsRequested');
-
-            //this.renderCheckpoints();
         });
     }
 });

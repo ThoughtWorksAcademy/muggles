@@ -16,8 +16,6 @@ define(function (require) {
             }).done(function (data) {
                 console.log(data);
                 if (data.redirect) {
-                    console.log(data.redirect);
-                    location = data.redirect;
                 }
             });
         };

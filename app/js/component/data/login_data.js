@@ -17,7 +17,6 @@ define(function (require) {
 
                 console.log('登陆成功');
                 self.trigger('uiSwitchPage', {name: 'courses'});
-                //location = 'views/courses.html';
             });
         };
 
