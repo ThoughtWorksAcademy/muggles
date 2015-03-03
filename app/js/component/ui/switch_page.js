@@ -3,7 +3,8 @@ define(function (require) {
 
     var defineComponent = require('flight/lib/component'),
         loginPage = require('../../page/login_page'),
-        courses = require('../../page/courses');
+        courses = require('../../page/courses'),
+        course = require('../../page/course');
 
     return defineComponent(switchPage);
 
@@ -11,7 +12,8 @@ define(function (require) {
 
         this.defaultAttrs({
             'loginPage' : loginPage,
-            'courses' : courses
+            'courses' : courses,
+            'course' : course
         });
 
         this.after('initialize', function () {

@@ -17,7 +17,6 @@ define(function (require) {
                 method: 'get'
             }).fail(function () {
                 console.log('获取courses失败');
-                console.log(data);
 
             }).done(function (data) {
                 console.log('获取courses成功');
@@ -38,9 +37,19 @@ define(function (require) {
         };
 
 
-        this.serveCourse = function () {
-            console.log(this.node);
-            console.log('接下来获取'+ this.node.id +'课程信息');
+        this.serveCourse = function (event) {
+            var self = this;
+            var id = event.target.id;
+            console.log('接下来获取'+ id +'课程信息');
+            $.ajax('api/users/courses/' + id, {
+                method: 'get'
+            }).fail(function () {
+                console.log('获取id为' + id + '的课程失败');
+            }).done(function (data) {
+                console.log('获取课程成功');
+                console.log(data);
+                self.trigger('uiSwitchPage', {name: 'course'});
+            });
         };
 
         this.after('initialize', function () {
