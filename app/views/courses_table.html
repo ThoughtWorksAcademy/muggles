@@ -9,7 +9,8 @@
     <tbody>
     {{#courses}}
     <tr>
-        <td>{{name}}</td>
+        <td>{{_id}}</td>
+        <td id="{{_id}}" class="course_name">{{name}}</td>
         <td>{{trainer}}</td>
         <td>{{sponsor}}</td>
     </tr>

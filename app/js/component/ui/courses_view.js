@@ -7,34 +7,45 @@ define(function (require) {
 
     function courses() {
         this.defaultAttrs({
-            coursePanel: '.courses-tbody'
+            coursePanel: '.courses-tbody',
+            courseName: '.course_name'
         });
 
+
+        this.serveCourses = function (callback) {
+            $.ajax('/api/users/courses', {
+                method: 'get'
+            }).fail(function () {
+                console.log('获取courses失败');
+                console.log(data);
+
+            }).done(function (data) {
+                console.log('获取courses成功');
+                console.log(data);
+                callback(data);
+            });
+        };
+
         this.renderCourses = function () {
-            var courses = [
-                {
-                    name: '1',
-                    trainer: '1',
-                    sponsor: '1'
-                },
-                {
-                    name: '1',
-                    trainer: '1',
-                    sponsor: '1'
-                },
-                {
-                    name: '1',
-                    trainer: '1',
-                    sponsor: '1'
-                }
-            ];
+            var self = this;
 
-            var html = template.render({courses: courses});
+            this.serveCourses(function (data) {
+                console.log(data);
+                var html = template.render({courses: data});
 
-            this.select('coursePanel').append(html);
+                self.select('coursePanel').append(html);
+            });
+        };
+
+
+        this.serveCourse = function () {
+            console.log(this.node);
+            console.log('接下来获取'+ this.node.id +'课程信息');
         };
 
         this.after('initialize', function () {
+            this.on(document, 'click',
+                { 'courseName' :this.serveCourse});
             this.renderCourses();
         });
     }
