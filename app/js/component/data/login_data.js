@@ -4,6 +4,11 @@ define(function (require) {
     return defineComponent(login);
 
     function login() {
+
+        this.defaultAttrs({
+            tip: '#tip'
+        });
+
         this.handleLogin = function (event, data) {
             var self = this;
             $.ajax('/api/users/login', {
@@ -11,16 +16,16 @@ define(function (require) {
                 data: data
             }).fail(function (data) {
                 console.log(data.responseText);
-                console.log('登陆失败');
+                self.$node.find('#tip').text(data.responseText);
+                self.trigger('uiTipShow',{tip: data.responseText});
             }).done(function (data) {
                 console.log(data);
-
-                console.log('登陆成功');
                 self.trigger('uiSwitchPage', {name: 'courses'});
             });
         };
 
         this.after('initialize', function () {
+            this.$tip = this.$node.find('#tip');
             this.on('uiLogin', this.handleLogin);
         });
     }

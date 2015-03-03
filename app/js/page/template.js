@@ -27,6 +27,7 @@ define(function () {
         '<a id="uiLogin" class="btn btn-default">登陆</a>' +
         '</form>' +
         '</div>';
+
     return {
         checkpoint: checkpoint,
         login: login
