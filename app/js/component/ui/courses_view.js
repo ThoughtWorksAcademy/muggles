@@ -20,7 +20,6 @@ define(function (require) {
 
             }).done(function (data) {
                 console.log('获取courses成功');
-                console.log(data);
                 callback(data);
             });
         };
@@ -29,7 +28,6 @@ define(function (require) {
             var self = this;
 
             this.serveCourses(function (data) {
-                console.log(data);
                 var html = template.render({courses: data});
 
                 self.select('coursePanel').append(html);
@@ -40,7 +38,7 @@ define(function (require) {
         this.serveCourse = function (event) {
             var self = this;
             var id = event.target.id;
-            console.log('接下来获取'+ id +'课程信息');
+            console.log('接下来获取' + id + '课程信息');
             $.ajax('api/users/courses/' + id, {
                 method: 'get'
             }).fail(function () {
@@ -48,13 +46,17 @@ define(function (require) {
             }).done(function (data) {
                 console.log('获取课程成功');
                 console.log(data);
-                self.trigger('uiSwitchPage', {name: 'course'});
+                self.trigger('uiSwitchPage',
+                    {
+                        name: 'course',
+                        course: data
+                    });
             });
         };
 
         this.after('initialize', function () {
             this.on(document, 'click',
-                { 'courseName' :this.serveCourse});
+                {'courseName': this.serveCourse});
             this.renderCourses();
         });
     }

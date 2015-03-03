@@ -3,7 +3,7 @@ define(function (require) {
 
     var templates = require('js/templates'),
         template = templates['courses'].render(),
-        CoursesView = require('component/ui/courses_view');
+        CoursesView = require('component/ui/courses_view')
 
     return initialize;
 
