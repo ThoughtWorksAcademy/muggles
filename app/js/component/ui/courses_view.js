@@ -37,21 +37,22 @@ define(function (require) {
 
         this.serveCourse = function (event) {
             var self = this;
-            //var id = event.target.id;
-            //console.log( 'id' + id);
-            //console.log('接下来获取' + id + '课程信息');
-            //$.ajax('/api/users/courses/' + id, {
-            //    method: 'get'
-            //}).fail(function () {
-            //    console.log('获取id为' + id + '的课程失败');
-            //}).done(function (data) {
-            //    console.log(data);
-            //    console.log('获取课程成功');
+            var id = event.target.id;
+            console.log( 'id' + id);
+            console.log('接下来获取' + id + '课程信息');
+            $.ajax('/api/users/courses/' + id, {
+                method: 'get'
+            }).fail(function () {
+                console.log('获取id为' + id + '的课程失败');
+            }).done(function (data) {
+                console.log(data);
+                console.log('获取课程成功');
                 self.trigger('uiSwitchPage',
                     {
-                        name: 'course'
+                        name: 'course',
+                        data: data
                     });
-            //});
+            });
         };
 
         this.after('initialize', function () {

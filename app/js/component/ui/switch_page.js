@@ -18,7 +18,7 @@ define(function (require) {
 
         this.after('initialize', function () {
            this.on('uiSwitchPage', function(e, page) {
-               this.attr[page.name]();
+               this.attr[page.name](page.data);
            })
         });
     }
