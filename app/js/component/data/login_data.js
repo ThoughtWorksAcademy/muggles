@@ -11,7 +11,7 @@ define(function (require) {
 
         this.handleLogin = function (event, data) {
             var self = this;
-            $.ajax('/api/users/login', {
+            $.ajax('/api/trainees/login', {
                 method: 'POST',
                 data: data
             }).fail(function (data) {
