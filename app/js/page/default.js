@@ -16,12 +16,10 @@ define(function (require) {
     return initialize;
 
     function initialize() {
-
         LoginView.attachTo('#app');
 
         SwitchPage.attachTo(document);
         Authenticate.attachTo(document);
-
 
         LoginData.attachTo(document);
 
