@@ -23,7 +23,7 @@ define(function (require) {
         this.after('initialize', function () {
             this.on('#signup', 'click', this.handleLogin);
             this.on(document, 'click',
-                { 'uiLogin' :this.handleLogin});
+                {'uiLogin': this.handleLogin});
         });
     }
 });

@@ -8,7 +8,7 @@ define(function (require) {
     return initialize;
 
     function initialize() {
-        $('#app').fadeOut(function() {
+        $('#app').fadeOut(function () {
             $('#app').html(template).fadeIn();
 
             CoursesView.attachTo('#app');

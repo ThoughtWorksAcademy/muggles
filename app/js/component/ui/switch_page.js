@@ -11,15 +11,15 @@ define(function (require) {
     function switchPage() {
 
         this.defaultAttrs({
-            'loginPage' : loginPage,
-            'courses' : courses,
-            'course' : course
+            'loginPage': loginPage,
+            'courses': courses,
+            'course': course
         });
 
         this.after('initialize', function () {
-           this.on('uiSwitchPage', function(e, page) {
-               this.attr[page.name](page.data);
-           })
+            this.on('uiSwitchPage', function (e, page) {
+                this.attr[page.name](page.data);
+            })
         });
     }
 });

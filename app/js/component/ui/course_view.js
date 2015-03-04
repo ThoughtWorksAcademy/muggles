@@ -7,7 +7,7 @@ define(function (require) {
 
     function course() {
         this.defaultAttrs({
-            app : '#app',
+            app: '#app',
             courseName: '.course_name'
         });
         this.renderCourse = function () {
