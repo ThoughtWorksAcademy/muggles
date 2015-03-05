@@ -19,7 +19,6 @@ define(function (require) {
                 console.log('获取courses失败');
 
             }).done(function (data) {
-                console.log('获取courses成功');
                 callback(data);
             });
         };

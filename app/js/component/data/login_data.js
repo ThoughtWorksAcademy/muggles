@@ -15,11 +15,9 @@ define(function (require) {
                 method: 'POST',
                 data: data
             }).fail(function (data) {
-                console.log(data.responseText);
                 self.$node.find('#tip').text(data.responseText);
                 self.trigger('uiTipShow', {tip: data.responseText});
             }).done(function (data) {
-                console.log(data);
                 self.trigger('uiSwitchPage', {name: 'courses'});
             });
         };
