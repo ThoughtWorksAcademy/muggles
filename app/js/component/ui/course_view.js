@@ -13,9 +13,15 @@ define(function (require) {
             courseName: '.course_name'
         });
         this.renderCourse = function () {
+            var course = this.attr.course;
             var groups = this.groupCheckpoints(this.attr.course.checkpoints);
 
-            var html = template.render({groups: groups});
+            var html = template.render({
+                groups: groups,
+                name: course.name,
+                sponsor: course.sponsor,
+                trainer: course.trainer
+            });
             $('#app').html(html).fadeIn();
             this.on('.checkpoint-item', 'click', this.handleChecked);
             //this.select('app').append(html).fadeIn();
