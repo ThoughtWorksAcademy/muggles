@@ -13,12 +13,27 @@ define(function (require) {
             courseName: '.course_name'
         });
         this.renderCourse = function () {
-            console.log(this.attr.course);
             var groups = this.groupCheckpoints(this.attr.course.checkpoints);
 
             var html = template.render({groups: groups});
             $('#app').html(html).fadeIn();
+            this.on('.checkpoint-item', 'click', this.handleChecked);
             //this.select('app').append(html).fadeIn();
+        };
+
+        this.handleChecked = function (event) {
+            var id = event.target.id;
+            var data = event.target.checked;
+            $.ajax('/api/users/course/checkpoints/' + id, {
+                method: 'patch',
+                data: {checked: data}
+            }).fail(function () {
+                console.log('checkpoint 更新失败');
+            }).done(function (data) {
+                console.log(data);
+                console.log('checkpoint 更新成功');
+            });
+
         };
 
         this.groupCheckpoints = function (checkpoints) {
