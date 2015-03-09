@@ -1,21 +1,30 @@
 'use strict';
 
-var tests = Object.keys(window.__karma__.files).filter(function (file) {
-  return (/\.spec\.js$/.test(file));
-});
+mocha.setup('mocha-flight');
 
 requirejs.config({
-  // Karma serves files from '/base'
-  baseUrl: '/base/app/bower_components',
+    // Karma serves files from '/base'
+    baseUrl: '/base/app/bower_components',
 
-  paths: {
-    'component': '../js/component',
-    'page': '../js/page'
-  },
+    paths: {
+        'component': '../js/component',
+        'page': '../js/page',
+        'jquery': 'bower_components/jquery/dist/jquery',
+        'flight': 'bower_components/flight',
+        'chai': 'bower_components/chai/chai',
+        'mock': 'test/mock'
+    },
 
-  // ask Require.js to load these files (all our tests)
-  deps: tests,
+    // ask Require.js to load these files (all dependent libs and our tests)
+    deps: (function () {
+        var libs = ['jquery'],
+            tests = Object.keys(window.__karma__.files).filter(function (file) {
+                return (/\.spec\.js$/.test(file));
+            });
 
-  // start test run, once Require.js is done
-  callback: window.__karma__.start
+        return Array.prototype.concat(libs, tests);
+    }()),
+
+    // start test run, once Require.js is done
+    callback: window.__karma__.start
 });
