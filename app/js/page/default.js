@@ -13,11 +13,13 @@ define(function (require) {
     var CheckPointView = require('component/ui/checkpoint_view');
     var CheckPointData = require('component/data/checkpoint_data');
 
+    var SwitchPageTrainer = require('component/ui/switch_page_trainer');
     return initialize;
 
     function initialize() {
         LoginView.attachTo('#app');
 
+        SwitchPageTrainer.attachTo(document);
         SwitchPage.attachTo(document);
         Authenticate.attachTo(document);
 
