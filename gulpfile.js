@@ -4,13 +4,13 @@ var gulp = require('gulp');
 var refresh = require('gulp-livereload');
 var livereload = require('tiny-lr');
 var server = livereload();
+var compiler = require('gulp-hogan-compile');
 
 gulp.task('livereload-server', function () {
   server.listen(35729, function (err) {
     if (err) { return console.log(err); }
   });
 });
-var compiler = require('gulp-hogan-compile');
 
 gulp.task('templates', function() {
     gulp.src('app/views/**/*.html')
