@@ -29,23 +29,38 @@ define(function (require) {
             this.serveStations(function (data) {
                 console.log(data);
                 var html = template.render({stations: data});
-
                 self.select('stationBody').append(html).fadeIn();
             });
         };
 
 
-        this.serveStation = function (event) {
+        this.serveStationCourses = function (event) {
             var self = this;
             var id = event.target.id;
-            $.ajax('/api/users/courses/' + id, {
+            $.ajax('/api/trainers/stations/courses/' + id, {
                 method: 'get'
             }).fail(function () {
                 console.log('获取id为' + id + '的课程失败');
             }).done(function (data) {
                 self.trigger('uiSwitchPage',
                     {
-                        name: 'course',
+                        name: 'stationsCourses',
+                        data: data
+                    });
+            });
+        };
+
+        this.serveStationStudents = function (event) {
+            var self = this;
+            var id = event.target.id;
+            $.ajax('/api/trainers/stations/students' + id, {
+                method: 'get'
+            }).fail(function () {
+                console.log('获取id为' + id + '的课程失败');
+            }).done(function (data) {
+                self.trigger('uiSwitchPage',
+                    {
+                        name: 'stationsStudents',
                         data: data
                     });
             });
@@ -53,7 +68,10 @@ define(function (require) {
 
         this.after('initialize', function () {
             this.on(document, 'click',
-                {'stationName': this.serveStation});
+                {
+                    'stationCourses': this.serveStationCourses,
+                    'stationStudents': this.serveStationStudents
+                });
             this.renderStations();
         });
     }
