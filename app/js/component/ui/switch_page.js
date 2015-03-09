@@ -5,7 +5,7 @@ define(function (require) {
         loginPage = require('../../page/login_page'),
         courses = require('../../page/courses'),
         course = require('../../page/course'),
-        station = require('../../page/station');
+        station = require('../../page/station')
     return defineComponent(switchPage);
 
     function switchPage() {

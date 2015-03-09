@@ -8,7 +8,9 @@ define(function (require) {
     function stations() {
         this.defaultAttrs({
             stationBody: '.stations-body',
-            stationName: '.station_name'
+            stationName: '.station_name',
+            stationCourses: '.stationCourses',
+            stationStudents: '.stationStudents'
         });
 
 

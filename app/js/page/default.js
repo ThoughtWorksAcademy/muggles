@@ -10,9 +10,6 @@ define(function (require) {
     var SignUpView = require('component/ui/signup_view');
     var SignUpData = require('component/data/signup_data');
 
-    var CheckPointView = require('component/ui/checkpoint_view');
-    var CheckPointData = require('component/data/checkpoint_data');
-
     return initialize;
 
     function initialize() {
@@ -22,10 +19,6 @@ define(function (require) {
         Authenticate.attachTo(document);
 
         LoginData.attachTo(document);
-
-        CheckPointData.attachTo(document);
-        CheckPointView.attachTo('.js-checkpoint');
-
 
         SignUpView.attachTo('.js-signup');
         SignUpData.attachTo(document);
