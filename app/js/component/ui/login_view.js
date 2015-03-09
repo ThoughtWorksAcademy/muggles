@@ -1,5 +1,6 @@
 define(function (require) {
     var defineComponent = require('flight/lib/component');
+    var _ = require('lodash/lodash');
 
     return defineComponent(login);
 
@@ -7,15 +8,23 @@ define(function (require) {
         this.defaultAttrs({
             uiLogin: '#uiLogin',
             username: '#username',
-            password: '#password'
+            password: '#password',
+            userType: '.userType'
         });
         this.handleLogin = function () {
             var username = this.select('username');
             var password = this.select('password');
-
+            var userTypes = this.select('userType');
+            var user = 'trainee';
+            _.forEach(userTypes, function(userType) {
+                if(userType.checked) {
+                    user = userType.value;
+                }
+            });
             this.trigger('uiLogin', {
                 username: username.val(),
-                password: password.val()
+                password: password.val(),
+                userType: user
             });
         };
 

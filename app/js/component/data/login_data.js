@@ -1,6 +1,5 @@
 define(function (require) {
     var defineComponent = require('flight/lib/component');
-
     return defineComponent(login);
 
     function login() {
@@ -17,8 +16,15 @@ define(function (require) {
             }).fail(function (data) {
                 self.$node.find('#tip').text(data.responseText);
                 self.trigger('uiTipShow', {tip: data.responseText});
-            }).done(function (data) {
-                self.trigger('uiSwitchPage', {name: 'courses'});
+            }).done(function (user) {
+                if(data.userType == 'trainee'){
+                    self.trigger('uiSwitchPage', {name: 'courses'});
+                } else if(data.userType === 'trainer') {
+                    self.trigger('uiSwitchPage', {
+                        name: 'station',
+                        data: 'station'
+                    });
+                }
             });
         };
 
