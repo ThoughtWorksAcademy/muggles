@@ -30,7 +30,7 @@ define(function (require) {
                 console.log(data);
                 var html = template.render({stations: data});
 
-                self.select('stationBody').append(html);
+                self.select('stationBody').append(html).fadeIn();
             });
         };
 
