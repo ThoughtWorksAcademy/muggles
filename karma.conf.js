@@ -27,8 +27,9 @@ module.exports = function (config) {
       'test/test-main.js'
     ],
     frameworks: [
-      'jasmine',
-      'requirejs'
+      'requirejs',
+        'mocha',
+        'sinon'
     ],
     reporters: [process.env.TRAVIS ? 'dots' : 'progress'],
     reportSlowerThan: 500,
