@@ -16,8 +16,8 @@ define(function (require) {
             var password = this.select('password');
             var userTypes = this.select('userType');
             var user = 'trainee';
-            _.forEach(userTypes, function(userType) {
-                if(userType.checked) {
+            _.forEach(userTypes, function (userType) {
+                if (userType.checked) {
                     user = userType.value;
                 }
             });

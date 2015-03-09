@@ -17,9 +17,9 @@ define(function (require) {
                 self.$node.find('#tip').text(data.responseText);
                 self.trigger('uiTipShow', {tip: data.responseText});
             }).done(function (user) {
-                if(data.userType == 'trainee'){
+                if (data.userType == 'trainee') {
                     self.trigger('uiSwitchPage', {name: 'courses'});
-                } else if(data.userType === 'trainer') {
+                } else if (data.userType === 'trainer') {
                     self.trigger('uiSwitchPage', {
                         name: 'station',
                         data: 'station'
