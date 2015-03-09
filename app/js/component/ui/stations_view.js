@@ -1,22 +1,22 @@
 define(function (require) {
     var defineComponent = require('flight/lib/component');
     var templates = require('js/templates'),
-        template = templates['courses_table'];
+        template = templates['trainer/stations'];
 
-    return defineComponent(courses);
+    return defineComponent(stations);
 
-    function courses() {
+    function stations() {
         this.defaultAttrs({
-            coursePanel: '.courses-tbody',
+            stationBody: '.stations-body',
             stationName: '.station_name'
         });
 
 
         this.serveStations = function (callback) {
-            $.ajax('/api/trainer/stations', {
+            $.ajax('/api/trainers/stations', {
                 method: 'get'
             }).fail(function () {
-                console.log('获取courses失败');
+                console.log('获取stations失败');
 
             }).done(function (data) {
                 callback(data);
@@ -27,9 +27,10 @@ define(function (require) {
             var self = this;
 
             this.serveStations(function (data) {
-                var html = template.render({courses: data});
+                console.log(data);
+                var html = template.render({stations: data});
 
-                self.select('coursePanel').append(html);
+                self.select('stationBody').append(html);
             });
         };
 

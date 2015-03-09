@@ -7,7 +7,7 @@ define(function (require) {
 
     function courses() {
         this.defaultAttrs({
-            coursePanel: '.courses-tbody',
+            courseTable: '.courses-tbody',
             courseName: '.course_name'
         });
 
@@ -29,7 +29,7 @@ define(function (require) {
             this.serveCourses(function (data) {
                 var html = template.render({courses: data});
 
-                self.select('coursePanel').append(html);
+                self.select('courseTable').append(html);
             });
         };
 
