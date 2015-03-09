@@ -1,7 +1,6 @@
 define(function (require) {
     var defineComponent = require('flight/lib/component');
     var _ = require('lodash/lodash');
-    var checkpointTemplate = require('page/template').checkpoint;
 
     return defineComponent(checkpoint);
 
