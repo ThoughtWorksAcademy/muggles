@@ -29,19 +29,22 @@ define(function (require) {
         this.groupCheckpoints = function (checkpoints) {
             var groupCheckpoints = [];
             var groupNames = _.uniq(_.pluck(checkpoints, 'type'));
+
             _.forEach(groupNames, function (groupName) {
                 groupCheckpoints.push({groupName: groupName, checkpoints: _.where(checkpoints, {type: groupName})})
+
             });
             return groupCheckpoints;
         };
 
         this.changeCheckPoint = function (event, data) {
-            console.log(data);
             $.ajax('/api/users/course/checkpoints', {
                 method: 'patch',
                 data: data
+
             }).fail(function () {
                 console.log('checkpoint 更新失败');
+
             }).done(function () {
                 console.log('checkpoint 更新成功');
             });

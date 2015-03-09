@@ -22,6 +22,7 @@ define(function (require) {
                 sponsor: course.sponsor,
                 trainer: course.trainer
             });
+
             $('#app').html(html).fadeIn();
             this.on('.checkpoint-item', 'click', this.handleChecked);
             //this.select('app').append(html).fadeIn();
@@ -33,8 +34,10 @@ define(function (require) {
             $.ajax('/api/users/course/checkpoints/' + id, {
                 method: 'patch',
                 data: {checked: data}
+
             }).fail(function () {
                 console.log('checkpoint 更新失败');
+
             }).done(function (data) {
                 console.log(data);
                 console.log('checkpoint 更新成功');
@@ -49,6 +52,7 @@ define(function (require) {
             _.forEach(groupNames, function (groupName) {
                 groupCheckpoints.push({groupName: groupName, checkpoints: _.where(checkpoints, {type: groupName})})
             });
+
             return groupCheckpoints;
         };
 

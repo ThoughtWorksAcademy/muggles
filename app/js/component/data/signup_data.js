@@ -9,6 +9,7 @@ define(function (require) {
             $.ajax('/api/users/signup', {
                 method: 'POST',
                 data: data
+
             }).fail(function () {
                 console.log('注册失败');
                 console.log(data);

@@ -9,9 +9,10 @@ define(function (require) {
             password: '#password'
         });
 
-        this.handleLogin = function (event) {
+        this.handleLogin = function () {
             var username = this.select('username');
             var password = this.select('password');
+
             this.trigger('uiSignUp', {
                 username: username.val(),
                 password: password.val()
