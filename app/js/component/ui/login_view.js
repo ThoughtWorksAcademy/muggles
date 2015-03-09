@@ -21,8 +21,8 @@ define(function (require) {
                 if (userType.checked) {
                     user = userType.value;
                 }
-
             });
+
             this.trigger('uiLogin', {
                 username: username.val(),
                 password: password.val(),

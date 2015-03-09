@@ -48,7 +48,7 @@ define(function (require) {
             }).done(function (data) {
                 self.trigger('uiSwitchPage',
                     {
-                        name: 'stationsCourses',
+                        name: 'stationCourses',
                         data: data
                     });
             });
