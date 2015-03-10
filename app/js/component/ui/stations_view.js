@@ -67,7 +67,7 @@ define(function (require) {
             }).done(function (data) {
                 self.trigger('uiSwitchPage',
                     {
-                        name: 'stationsStudents',
+                        name: 'stationStudents',
                         data: data
                     });
             });
