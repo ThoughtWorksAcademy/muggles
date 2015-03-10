@@ -57,16 +57,16 @@ define(function (require) {
             var self = this;
             var id = event.target.id;
 
-            $.ajax('/api/trainers/stations/'+ id +'/students', {
+            $.ajax('/api/trainers/stations/'+ id +'/trainees', {
                 method: 'get'
 
             }).fail(function () {
-                console.log('获取id为' + id + '的课程失败');
+                console.log('获取id为' + id + '的trainees失败');
 
             }).done(function (data) {
                 self.trigger('uiSwitchPage',
                     {
-                        name: 'stationStudents',
+                        name: 'stationTrainees',
                         data: data
                     });
             });

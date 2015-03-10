@@ -3,7 +3,7 @@ define(function (require) {
 
     var templates = require('js/templates'),
         template = templates['trainer/stations'].render(),
-        StationsStudents = require('component/ui/station_students');
+        StationsTrainees = require('component/ui/station_trainees');
 
     return initialize;
 
@@ -11,7 +11,7 @@ define(function (require) {
         $('#app').fadeOut(function () {
             $('#app').html(template).fadeIn();
 
-            StationsStudents.attachTo('#app');
+            StationsTrainees.attachTo('#app');
         });
     }
 });

@@ -6,7 +6,7 @@ define(function (require) {
         courses = require('../../page/courses'),
         course = require('../../page/course'),
         station = require('../../page/station'),
-        station_students = require('../../page/station_students'),
+        station_trainees_page = require('../../page/station_trainees_page'),
         station_courses = require('../../page/station_courses');
     return defineComponent(switchPage);
 
@@ -17,7 +17,7 @@ define(function (require) {
             'courses': courses,
             'course': course,
             'station': station,
-            'stationStudents' : station_students,
+            'stationTrainees' : station_trainees_page,
             'stationCourses' : station_courses
         });
 
