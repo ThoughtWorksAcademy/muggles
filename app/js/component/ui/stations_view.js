@@ -38,8 +38,7 @@ define(function (require) {
         this.serveStationCourses = function (event) {
             var self = this;
             var id = event.target.id;
-
-            $.ajax('/api/trainers/stations/courses/' + id, {
+            $.ajax('/api/trainers/stations/' + id + '/courses', {
                 method: 'get'
 
             }).fail(function () {
@@ -58,7 +57,7 @@ define(function (require) {
             var self = this;
             var id = event.target.id;
 
-            $.ajax('/api/trainers/stations/students' + id, {
+            $.ajax('/api/trainers/stations/'+ id +'/students', {
                 method: 'get'
 
             }).fail(function () {

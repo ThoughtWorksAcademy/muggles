@@ -10,7 +10,8 @@ define(function (require) {
 
         this.renderStationCourses = function () {
             var courses = this.attr.stationCourses;
-            var html = template.render(courses);
+            console.log(courses);
+            var html = template.render({courses: courses});
             $('#app').html(html).fadeIn();
         };
 
