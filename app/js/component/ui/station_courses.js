@@ -14,8 +14,6 @@ define(function (require) {
             $('#app').html(html).fadeIn();
         };
 
-
-
         this.after('initialize', function () {
             this.renderStationCourses();
         });
