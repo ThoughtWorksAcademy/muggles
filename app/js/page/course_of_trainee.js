@@ -2,16 +2,15 @@ define(function (require) {
     'use strict';
 
     var templates = require('js/templates'),
-        template = templates['trainer/stations'].render(),
-        StationsTrainees = require('component/ui/station_trainees');
+        template = templates['trainer/course_of_trainee'].render(),
+        CourseOfTrainee = require('component/ui/course_of_trainee');
 
     return initialize;
 
     function initialize(data) {
         $('#app').fadeOut(function () {
             $('#app').html(template).fadeIn();
-
-            StationsTrainees.attachTo('#app', {data: data});
+            CourseOfTrainee.attachTo('#app', {courseOfTrainee: data});
         });
     }
 });

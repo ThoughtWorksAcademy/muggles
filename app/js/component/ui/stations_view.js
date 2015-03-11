@@ -67,7 +67,7 @@ define(function (require) {
                 self.trigger('uiSwitchPage',
                     {
                         name: 'stationTrainees',
-                        data: data
+                        data: {trainees: data, courseId: id}
                     });
             });
         };

@@ -1,15 +1,11 @@
-define(function (require) {
-    'use strict';
+describeComponent('path/to/component', function () {
+    beforeEach(function () {
+        //setupComponent();
+    });
 
-    var expect = require('chai').expect;
-    var defineComponent = require('flight/lib/component');
-    var login_page = require('component/ui/login_page');
-
-    describeComponent('component/ui/login_view', function () {
-        describe('this.Component', function () {
-            it('should be a login_view component', function () {
-                expect(this.Component).to.equal(login_page)
-            });
-        })
+    it('should do x', function () {
+        // a component instance is now accessible as `this.component`
+        // the component root node is attached to the DOM
+        // the component root node is also available as this.$node
     });
 });

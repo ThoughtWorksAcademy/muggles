@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row show-space">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">XXX课程学生名单</div>
+                <div class="panel-body">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>学生姓名</th>
+                            <th>#</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {{#trainees}}
+                        <tr>
+                            <td>{{username}}</td>
+                            <td class="trainee-courses"><button id="{{_id}}" type="button" class="btn btn-primary">所有课程</button></td>
+                        </tr>
+                        {{/trainees}}
+                        </tbody>
+                    </table>
+                    <a>返回</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
