@@ -14,10 +14,7 @@ define(function (require) {
         });
         this.renderCourse = function () {
             var course = this.attr.course;
-            console.log(course);
             var groups = this.groupCheckpoints(this.attr.course.checkpoints);
-            console.log(groups);
-
 
             var html = template.render({
                 groups: groups,

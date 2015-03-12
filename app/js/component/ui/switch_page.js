@@ -19,10 +19,10 @@ define(function (require) {
             'courses': courses,
             'course': course,
             'station': station,
-            'stationTrainees' : stationTraineesPage,
-            'stationCourses' : stationCourses,
-            'coursesOfTrainee' : coursesOfTrainee,
-            'courseOfTrainee' : courseOfTrainee
+            'stationTrainees': stationTraineesPage,
+            'stationCourses': stationCourses,
+            'coursesOfTrainee': coursesOfTrainee,
+            'courseOfTrainee': courseOfTrainee
         });
 
         this.after('initialize', function () {

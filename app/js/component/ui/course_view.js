@@ -39,7 +39,6 @@ define(function (require) {
                 console.log('checkpoint 更新失败');
 
             }).done(function (data) {
-                console.log(data);
                 console.log('checkpoint 更新成功');
             });
 

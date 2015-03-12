@@ -57,7 +57,7 @@ define(function (require) {
             var self = this;
             var id = event.target.id;
 
-            $.ajax('/api/trainers/stations/'+ id +'/trainees', {
+            $.ajax('/api/trainers/stations/' + id + '/trainees', {
                 method: 'get'
 
             }).fail(function () {
