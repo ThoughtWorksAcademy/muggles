@@ -26,6 +26,7 @@ define(function (require) {
                 console.log('获取id为' + id + '的学生的所有课程失败');
 
             }).done(function (data) {
+                console.log(data);
                 self.trigger('uiSwitchPage',
                     {
                         name: 'coursesOfTrainee',

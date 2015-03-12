@@ -7,7 +7,7 @@ define(function (require) {
 
     function stations() {
         this.defaultAttrs({
-            traineeOfCourse: '.trainee-courses'
+            traineeCourses: '.traineeOfCourse'
         });
 
         this.renderTraineesOfCourse = function () {
@@ -28,7 +28,7 @@ define(function (require) {
             }).done(function (data) {
                 self.trigger('uiSwitchPage',
                     {
-                        name: 'coursesOfTrainee',
+                        name: 'courseOfTrainee',
                         data: data
                     });
             });
