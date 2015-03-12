@@ -48,7 +48,7 @@ define(function (require) {
                 self.trigger('uiSwitchPage',
                     {
                         name: 'stationCourses',
-                        data: data
+                        data: {data: data, id: id}
                     });
             });
         };

@@ -18,14 +18,16 @@ define(function (require) {
         };
 
         this.serveCourseTrainees = function () {
+
             var self = this;
-            var id = event.target.id;
-            console.log(id);
-            $.ajax('/api/courses/' + id + '/trainees/', {
+            console.log(this.attr);
+            var id = this.attr.id;
+
+            $.ajax('/api/trainers/stations/' + id + '/trainees', {
                 method: 'get'
 
             }).fail(function () {
-                console.log('获取id为' + id + '的课程的所有学生失败');
+                console.log('获取id为' + id + '的trainees失败');
 
             }).done(function (data) {
                 self.trigger('uiSwitchPage',
