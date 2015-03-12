@@ -17,12 +17,11 @@ define(function (require) {
             $('#app').html(html).fadeIn();
         };
 
-        this.serveCourseTrainees = function () {
+        this.serveCourseTrainees = function (event) {
 
             var self = this;
-            console.log(this.attr);
             var id = this.attr.id;
-
+            var courseId = event.target.id;
             $.ajax('/api/trainers/stations/' + id + '/trainees', {
                 method: 'get'
 
@@ -33,7 +32,7 @@ define(function (require) {
                 self.trigger('uiSwitchPage',
                     {
                         name: 'traineesOfCourse',
-                        data: data
+                        data: {data: data, id: courseId}
                     });
             });
         };

@@ -19,11 +19,13 @@ define(function (require) {
         this.serveTraineeCourses = function () {
             var self = this;
             var id = event.target.id;
-            $.ajax('/api/trainees/' + id + '/courses/', {
+            var courseId = this.attr.id;
+            console.log(courseId);
+            $.ajax('/api/users/courses/' + courseId, {
                 method: 'get'
 
             }).fail(function () {
-                console.log('获取id为' + id + '的学生的所有课程失败');
+                console.log('获取id为' + id + '的课程失败');
 
             }).done(function (data) {
                 self.trigger('uiSwitchPage',
