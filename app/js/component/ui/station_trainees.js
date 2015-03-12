@@ -11,27 +11,24 @@ define(function (require) {
         });
 
         this.renderStationCourses = function () {
-            var trainees = this.attr.data.trainees;
-            console.log(trainees);
+            var trainees = this.attr.trainees;
             var html = template.render({trainees: trainees});
             $('#app').html(html).fadeIn();
         };
 
-        this.serveTraineesCourses = function () {
+        this.serveTraineeCourses = function () {
             var self = this;
             var id = event.target.id;
-            var courseId = self.attr.data.courseId;
-
-            $.ajax('/api/trainees/' + id + '/courses/' + courseId, {
+            $.ajax('/api/trainees/' + id + '/courses/', {
                 method: 'get'
 
             }).fail(function () {
-                console.log('获取id为' + id + '的课程失败');
+                console.log('获取id为' + id + '的学生的所有课程失败');
 
             }).done(function (data) {
                 self.trigger('uiSwitchPage',
                     {
-                        name: 'courseOfTrainee',
+                        name: 'coursesOfTrainee',
                         data: data
                     });
             });
@@ -39,7 +36,7 @@ define(function (require) {
 
         this.after('initialize', function () {
             this.on(document, 'click',
-                {'traineeCourses': this.serveTraineesCourses});
+                {'traineeCourses': this.serveTraineeCourses});
             this.renderStationCourses();
         });
     }
