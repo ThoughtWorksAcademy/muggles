@@ -9,7 +9,8 @@ define(function (require) {
         stationTraineesPage = require('../../page/station_trainees_page'),
         stationCourses = require('../../page/station_courses'),
         coursesOfTrainee = require('../../page/courses_of_trainee'),
-        courseOfTrainee = require('../../page/course_of_trainee');
+        courseOfTrainee = require('../../page/course_of_trainee'),
+        traineesOfCourse = require('../../page/trainees_of_course');
     return defineComponent(switchPage);
 
     function switchPage() {
@@ -22,7 +23,8 @@ define(function (require) {
             'stationTrainees': stationTraineesPage,
             'stationCourses': stationCourses,
             'coursesOfTrainee': coursesOfTrainee,
-            'courseOfTrainee': courseOfTrainee
+            'courseOfTrainee': courseOfTrainee,
+            'traineesOfCourse' : traineesOfCourse
         });
 
         this.after('initialize', function () {
