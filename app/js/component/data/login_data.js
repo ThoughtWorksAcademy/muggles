@@ -10,25 +10,36 @@ define(function (require) {
 
         this.handleLogin = function (event, data) {
             var self = this;
-            $.ajax('/api/trainees/login', {
-                method: 'POST',
-                data: data
+            if (data.userType == 'trainee') {
 
-            }).fail(function (data) {
-                self.$node.find('#tip').text(data.responseText);
-                self.trigger('uiTipShow', {tip: data.responseText});
+                $.ajax('/api/trainees/login', {
+                    method: 'POST',
+                    data: data
 
-            }).done(function (user) {
-                if (data.userType == 'trainee') {
+                }).fail(function (data) {
+                    self.$node.find('#tip').text(data.responseText);
+                    self.trigger('uiTipShow', {tip: data.responseText});
+
+                }).done(function (user) {
                     self.trigger('uiSwitchPage', {name: 'courses'});
+                });
+            } else if(data.userType == 'trainer') {
+                $.ajax('/api/trainers/login', {
+                    method: 'POST',
+                    data: data
 
-                } else if (data.userType === 'trainer') {
+                }).fail(function (data) {
+                    self.$node.find('#tip').text(data.responseText);
+                    self.trigger('uiTipShow', {tip: data.responseText});
+
+                }).done(function (user) {
                     self.trigger('uiSwitchPage', {
                         name: 'station',
                         data: 'station'
                     });
-                }
-            });
+                });
+            }
+
         };
 
         this.after('initialize', function () {
