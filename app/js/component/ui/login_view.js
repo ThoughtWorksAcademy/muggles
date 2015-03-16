@@ -11,6 +11,7 @@ define(function (require) {
             password: '#password',
             userType: '.userType'
         });
+
         this.handleLogin = function () {
             var username = this.select('username');
             var password = this.select('password');

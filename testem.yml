@@ -1,0 +1,6 @@
+framework: mocha
+test_page: test/testem.mustache
+launch_in_dev:
+- node
+src_files:
+    - test/**/*.js

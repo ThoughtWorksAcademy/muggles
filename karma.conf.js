@@ -1,64 +1,44 @@
-// Karma configuration
-// Generated on Tue Mar 10 2015 23:59:11 GMT+0800 (CST)
+// Karma configuration file
 
-module.exports = function(config) {
-  config.set({
+module.exports = function (config) {
+    'use strict';
 
-    // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    config.set({
 
+        // base path, that will be used to resolve files and exclude
+        basePath: '',
 
-    // frameworks to use
-    // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['mocha', 'requirejs'],
+        frameworks: ['requirejs', 'mocha', 'sinon'],
 
+        // list of files / patterns to load in the browser
+        files: [
+            'app/bower_components/mocha-flight/lib/mocha-flight.js',
 
-    // list of files / patterns to load in the browser
-    files: [
-    ],
+            {pattern: 'app/bower_components/**/*.js', included: false},
+            {pattern: 'test/mock/*.js', included: false},
+            {pattern: 'test/spec/*.js', included: false},
+            {pattern: 'app/js/component/**/*.js', included: false},
+            {pattern: 'app/js/page/*.js', included: false},
+            'test/test-main.js'
+        ],
 
+        // use dots reporter, as travis terminal does not support escaping sequences
+        // possible values: 'dots', 'progress', 'junit', 'teamcity'
+        // CLI --reporters progress
+        reporters: ['dots'],
 
-    // list of files to exclude
-    exclude: [
-    ],
+        // enable / disable watching file and executing tests whenever any file changes
+        // CLI --auto-watch --no-auto-watch
+        autoWatch: true,
 
+        // start these browsers
+        browsers: [
+            'Chrome',
+            'Firefox'
+        ],
 
-    // preprocess matching files before serving them to the browser
-    // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {
-    },
-
-
-    // test results reporter to use
-    // possible values: 'dots', 'progress'
-    // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
-
-
-    // web server port
-    port: 9876,
-
-
-    // enable / disable colors in the output (reporters and logs)
-    colors: true,
-
-
-    // level of logging
-    // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
-
-
-    // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
-
-
-    // start these browsers
-    // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
-
-
-    // Continuous Integration mode
-    // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false
-  });
+        // Auto run tests on start (when browsers are captured) and exit
+        // CLI --single-run --no-single-run
+        singleRun: false
+    });
 };

@@ -19,11 +19,12 @@
   "scripts": {
     "livereload": "gulp",
     "server": "static app",
-    "test": "karma start --single-run",
+    "test": "./node_modules/testem/testem.js",
     "watch": "npm run server > server.log & npm run livereload",
     "watch-test": "karma start"
   },
   "dependencies": {
-    "gulp-hogan-compile": "^0.4.1"
+    "gulp-hogan-compile": "^0.4.1",
+    "karma-sinon": "^1.0.4"
   }
 }
