@@ -13,13 +13,16 @@ define(function (require) {
 
 
         this.serveCourses = function (callback) {
-            $.ajax('/api/users/courses', {
+            var id = $('body').data('_id');
+            console.log(id);
+            $.ajax('/api/users/' + id + '/courses', {
                 method: 'get'
 
             }).fail(function () {
                 console.log('获取courses失败');
 
             }).done(function (data) {
+                console.log(data);
                 callback(data);
             });
         };
