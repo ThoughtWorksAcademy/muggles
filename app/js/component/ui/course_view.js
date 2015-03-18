@@ -78,7 +78,7 @@ define(function (require) {
             var results = this.attr.data.data.result;
             var checked = false;
             _.forEach(results, function (result) {
-                if(result.checkpointId === id) {
+                if (result.checkpointId === id) {
                     checked = result.traineeChecked;
                 }
             });

@@ -22,10 +22,10 @@ define(function (require) {
 
                 }).done(function (user) {
                     //$.data(user);
-                    $( "body" ).data(user);
+                    $("body").data(user);
                     self.trigger('uiSwitchPage', {name: 'courses'});
                 });
-            } else if(data.userType == 'trainer') {
+            } else if (data.userType == 'trainer') {
                 $.ajax('/api/trainers/login', {
                     method: 'POST',
                     data: data
@@ -35,7 +35,7 @@ define(function (require) {
                     self.trigger('uiTipShow', {tip: data.responseText});
 
                 }).done(function (user) {
-                    $( "body" ).data(user);
+                    $("body").data(user);
                     console.log($().data());
 
                     self.trigger('uiSwitchPage', {

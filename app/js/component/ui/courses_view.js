@@ -43,7 +43,7 @@ define(function (require) {
             var userId = $('body').data('_id');
 
             $.ajax('/api/users/' + userId + '/courses/' + courseId, {
-            //$.ajax('/api/users/courses/' + courseId, {
+                //$.ajax('/api/users/courses/' + courseId, {
                 method: 'get'
 
             }).fail(function () {

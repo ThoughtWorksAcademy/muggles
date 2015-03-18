@@ -24,7 +24,7 @@ define(function (require) {
             'stationCourses': stationCourses,
             'coursesOfTrainee': coursesOfTrainee,
             'courseOfTrainee': courseOfTrainee,
-            'traineesOfCourse' : traineesOfCourse
+            'traineesOfCourse': traineesOfCourse
         });
 
         this.after('initialize', function () {
