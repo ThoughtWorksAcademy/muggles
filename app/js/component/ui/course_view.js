@@ -33,7 +33,6 @@ define(function (require) {
             var data = event.target.checked;
             var userId = $('body').data('_id');
             var courseId = this.attr.course._id;
-            console.log(courseId);
 
             //$.ajax('/api/users/course/checkpoints/' + id, {
             $.ajax('/api/users/' + userId + '/course/' + courseId + '/checkpoints/' + id, {
