@@ -21,7 +21,6 @@ define(function (require) {
                     self.trigger('uiTipShow', {tip: data.responseText});
 
                 }).done(function (user) {
-                    //$.data(user);
                     $("body").data(user);
                     self.trigger('uiSwitchPage', {name: 'courses'});
                 });

@@ -65,7 +65,6 @@ define(function (require) {
 
         this.addChecked = function (checkpointList) {
             var checkpoints = checkpointList;
-            var results = this.attr.data.data.result;
             var self = this;
             _.forEach(checkpointList, function (checkpoint) {
                 checkpoint.checked = self.checked(checkpoint._id);
