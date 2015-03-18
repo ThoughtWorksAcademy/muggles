@@ -31,7 +31,12 @@ define(function (require) {
         this.handleChecked = function (event) {
             var id = event.target.id;
             var data = event.target.checked;
-            $.ajax('/api/users/course/checkpoints/' + id, {
+            var userId = $('body').data('_id');
+            var courseId = this.attr.course._id;
+            console.log(courseId);
+
+            //$.ajax('/api/users/course/checkpoints/' + id, {
+            $.ajax('/api/users/' + userId + '/course/' + courseId + '/checkpoints/' + id, {
                 method: 'patch',
                 data: {checked: data}
 
@@ -44,7 +49,10 @@ define(function (require) {
 
         };
 
-        this.groupCheckpoints = function (checkpoints) {
+        this.groupCheckpoints = function (checkpointList) {
+            var self = this;
+            var checkpoints = self.addChecked(checkpointList);
+
             var groupCheckpoints = [];
             var groupNames = _.uniq(_.pluck(checkpoints, 'type'));
 
@@ -55,6 +63,28 @@ define(function (require) {
             return groupCheckpoints;
         };
 
+        this.addChecked = function (checkpointList) {
+            var checkpoints = checkpointList;
+            var results = this.attr.data.data.result;
+            var self = this;
+            _.forEach(checkpointList, function (checkpoint) {
+                checkpoint.checked = self.checked(checkpoint._id);
+                console.log(checkpoint);
+            });
+            return checkpoints;
+        };
+
+        this.checked = function (id) {
+            var results = this.attr.data.data.result;
+            var checked = false;
+            _.forEach(results, function (result) {
+                if(result.checkpointId === id) {
+                    checked = result.traineeChecked;
+                }
+            });
+
+            return checked;
+        };
         this.after('initialize', function () {
             this.renderCourse();
         });

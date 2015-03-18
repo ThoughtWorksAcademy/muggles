@@ -8,7 +8,7 @@ define(function (require) {
 
     function initialize(data) {
         $('#app').fadeOut(function () {
-            CourseView.attachTo('#app', {course: data});
+            CourseView.attachTo('#app', {course: data.course, data: data});
         });
     }
 });

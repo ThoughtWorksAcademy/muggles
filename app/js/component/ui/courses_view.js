@@ -39,9 +39,11 @@ define(function (require) {
 
         this.serveCourse = function (event) {
             var self = this;
-            var id = event.target.id;
+            var courseId = event.target.id;
+            var userId = $('body').data('_id');
 
-            $.ajax('/api/users/courses/' + id, {
+            $.ajax('/api/users/' + userId + '/courses/' + courseId, {
+            //$.ajax('/api/users/courses/' + courseId, {
                 method: 'get'
 
             }).fail(function () {
@@ -51,7 +53,7 @@ define(function (require) {
                 self.trigger('uiSwitchPage',
                     {
                         name: 'course',
-                        data: data
+                        data: {course: data.course, data: data}
                     });
             });
         };
