@@ -31,7 +31,11 @@ define(function (require) {
         this.handleChecked = function (event) {
             var id = event.target.id;
             var data = event.target.checked;
-            $.ajax('/api/users/course/checkpoints/' + id, {
+            var userId = $('body').data('_id');
+            var courseId = this.attr.course._id;
+
+            //$.ajax('/api/users/course/checkpoints/' + id, {
+            $.ajax('/api/trainer/users/' + userId + '/course/' + courseId + '/checkpoints/' + id, {
                 method: 'patch',
                 data: {checked: data}
 
@@ -39,10 +43,8 @@ define(function (require) {
                 console.log('checkpoint 更新失败');
 
             }).done(function (data) {
-                console.log(data);
                 console.log('checkpoint 更新成功');
             });
-
         };
 
         this.groupCheckpoints = function (checkpoints) {

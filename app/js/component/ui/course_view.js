@@ -67,7 +67,6 @@ define(function (require) {
             var self = this;
             _.forEach(checkpointList, function (checkpoint) {
                 checkpoint.checked = self.checked(checkpoint._id);
-                console.log(checkpoint);
             });
             return checkpoints;
         };

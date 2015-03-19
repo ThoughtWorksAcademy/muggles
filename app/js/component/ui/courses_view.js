@@ -14,7 +14,6 @@ define(function (require) {
 
         this.serveCourses = function (callback) {
             var id = $('body').data('_id');
-            console.log(id);
             $.ajax('/api/users/' + id + '/courses', {
                 method: 'get'
 
@@ -22,7 +21,6 @@ define(function (require) {
                 console.log('获取courses失败');
 
             }).done(function (data) {
-                console.log(data);
                 callback(data);
             });
         };
