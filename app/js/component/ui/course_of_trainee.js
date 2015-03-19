@@ -34,7 +34,6 @@ define(function (require) {
             var userId = $('body').data('_id');
             var courseId = this.attr.course._id;
 
-            //$.ajax('/api/users/course/checkpoints/' + id, {
             $.ajax('/api/trainer/users/' + userId + '/course/' + courseId + '/checkpoints/' + id, {
                 method: 'patch',
                 data: {checked: data}

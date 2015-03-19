@@ -25,7 +25,6 @@ define(function (require) {
 
             $('#app').html(html).fadeIn();
             this.on('.checkpoint-item', 'click', this.handleChecked);
-            //this.select('app').append(html).fadeIn();
         };
 
         this.handleChecked = function (event) {
@@ -34,7 +33,6 @@ define(function (require) {
             var userId = $('body').data('_id');
             var courseId = this.attr.course._id;
 
-            //$.ajax('/api/users/course/checkpoints/' + id, {
             $.ajax('/api/users/' + userId + '/course/' + courseId + '/checkpoints/' + id, {
                 method: 'patch',
                 data: {checked: data}
