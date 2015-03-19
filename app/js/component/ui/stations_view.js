@@ -43,7 +43,7 @@ define(function (require) {
             var userId = $('body').data('_id');
 
             $.ajax('/api/trainers/stations/' + id + '/courses', {
-            //$.ajax('/api/trainers/' + userId + '/stations/' + id + '/courses', {
+                //$.ajax('/api/trainers/' + userId + '/stations/' + id + '/courses', {
                 method: 'get'
 
             }).fail(function () {
@@ -64,7 +64,7 @@ define(function (require) {
             var userId = $('body').data('_id');
 
             $.ajax('/api/trainers/stations/' + id + '/trainees', {
-            //$.ajax('/api/trainers/' + userId + '/stations/' + id + '/trainees', {
+                //$.ajax('/api/trainers/' + userId + '/stations/' + id + '/trainees', {
                 method: 'get'
 
             }).fail(function () {

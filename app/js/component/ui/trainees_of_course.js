@@ -31,7 +31,7 @@ define(function (require) {
                 self.trigger('uiSwitchPage',
                     {
                         name: 'courseOfTrainee',
-                        data: data
+                        data: {data: data, traineeId: userId}
                     });
             });
         };

@@ -12,6 +12,7 @@ define(function (require) {
             app: '#app',
             courseName: '.course_name'
         });
+
         this.renderCourse = function () {
             var course = this.attr.course;
             var groups = this.groupCheckpoints(this.attr.course.checkpoints);
@@ -46,7 +47,10 @@ define(function (require) {
             });
         };
 
-        this.groupCheckpoints = function (checkpoints) {
+        this.groupCheckpoints = function (checkpointList) {
+            var self = this;
+            var checkpoints = self.addChecked(checkpointList);
+
             var groupCheckpoints = [];
             var groupNames = _.uniq(_.pluck(checkpoints, 'type'));
 
@@ -55,6 +59,29 @@ define(function (require) {
             });
 
             return groupCheckpoints;
+        };
+
+
+        this.addChecked = function (checkpointList) {
+            var checkpoints = checkpointList;
+            var self = this;
+            _.forEach(checkpointList, function (checkpoint) {
+                checkpoint.checked = self.checked(checkpoint._id);
+            });
+            return checkpoints;
+        };
+
+        this.checked = function (id) {
+            var results = this.attr.data.data.result;
+            var checked = false;
+
+            _.forEach(results, function (result) {
+                if (result.checkpointId == id) {
+                    checked = result.trainerChecked;
+                }
+            });
+
+            return checked;
         };
 
         this.after('initialize', function () {
