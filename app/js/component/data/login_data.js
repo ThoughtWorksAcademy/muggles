@@ -38,7 +38,6 @@ define(function (require) {
 
                 }).done(function (user) {
                     $("body").data(user);
-                    console.log($().data());
 
                     self.trigger('uiSwitchPage', {
                         name: 'station',
