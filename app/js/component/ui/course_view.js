@@ -12,6 +12,7 @@ define(function (require) {
             app: '#app',
             courseName: '.course_name'
         });
+
         this.renderCourse = function () {
             var course = this.attr.course;
             var groups = this.groupCheckpoints(this.attr.course.checkpoints);
@@ -72,6 +73,7 @@ define(function (require) {
         this.checked = function (id) {
             var results = this.attr.data.data.result;
             var checked = false;
+
             _.forEach(results, function (result) {
                 if (result.checkpointId === id) {
                     checked = result.traineeChecked;

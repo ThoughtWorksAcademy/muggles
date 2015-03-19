@@ -27,7 +27,6 @@ define(function (require) {
 
         this.renderCourses = function () {
             var self = this;
-
             this.serveCourses(function (data) {
                 var html = template.render({courses: data});
                 self.select('courseTable').append(html);

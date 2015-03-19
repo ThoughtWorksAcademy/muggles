@@ -22,6 +22,7 @@ define(function (require) {
             var self = this;
             var id = this.attr.id;
             var courseId = event.target.id;
+
             $.ajax('/api/trainers/stations/' + id + '/trainees', {
                 method: 'get'
 
