@@ -24,7 +24,10 @@ define(function (require) {
                     $("body").data(user);
                     self.trigger('uiSwitchPage', {name: 'courses'});
                 });
-            } else if (data.userType == 'trainer') {
+            }
+
+
+            else if (data.userType == 'trainer') {
                 $.ajax('/api/trainers/login', {
                     method: 'POST',
                     data: data

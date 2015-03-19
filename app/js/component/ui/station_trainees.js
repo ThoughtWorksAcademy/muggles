@@ -29,7 +29,7 @@ define(function (require) {
                 self.trigger('uiSwitchPage',
                     {
                         name: 'coursesOfTrainee',
-                        data: data
+                        data: {data: data, traineeId: id}
                     });
             });
         };

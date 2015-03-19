@@ -13,7 +13,6 @@ define(function (require) {
 
         this.renderCheckpoints = function () {
             var courses = this.attr.coursesOfTrainee;
-            console.log(courses);
             var html = template.render({courses: courses});
             $('#app').html(html).fadeIn();
         };
@@ -21,8 +20,10 @@ define(function (require) {
         this.serveCourse = function (event) {
             var self = this;
             var id = event.target.id;
+            var traineeid = this.attr.traineeId;
 
-            $.ajax('/api/users/courses/' + id, {
+            //$.ajax('/api/users/courses/' + id, {
+            $.ajax('/api/users/' + traineeid + '/courses/' + id, {
                 method: 'get'
 
             }).fail(function () {
