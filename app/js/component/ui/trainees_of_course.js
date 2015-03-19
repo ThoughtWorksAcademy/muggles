@@ -18,10 +18,10 @@ define(function (require) {
 
         this.serveTraineeCourses = function () {
             var self = this;
-            var id = event.target.id;
-            var courseId = this.attr.id;
-            console.log(courseId);
-            $.ajax('/api/users/courses/' + courseId, {
+            var userId = event.target.id;
+            var courseId = this.attr.courseId;
+
+            $.ajax('/api/users/' + userId + '/courses/' + courseId, {
                 method: 'get'
 
             }).fail(function () {

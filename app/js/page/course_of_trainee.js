@@ -10,7 +10,7 @@ define(function (require) {
     function initialize(data) {
         $('#app').fadeOut(function () {
             $('#app').html(template).fadeIn();
-            CourseOfTrainee.attachTo('#app', {course: data});
+            CourseOfTrainee.attachTo('#app', {course: data.course, data: data});
         });
     }
 });
