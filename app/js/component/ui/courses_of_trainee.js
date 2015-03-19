@@ -20,9 +20,9 @@ define(function (require) {
         this.serveCourse = function (event) {
             var self = this;
             var id = event.target.id;
-            var traineeid = this.attr.traineeId;
+            var traineeId = this.attr.traineeId;
 
-            $.ajax('/api/users/' + traineeid + '/courses/' + id, {
+            $.ajax('/api/users/' + traineeId + '/courses/' + id, {
                 method: 'get'
 
             }).fail(function () {
@@ -32,7 +32,7 @@ define(function (require) {
                 self.trigger('uiSwitchPage',
                     {
                         name: 'courseOfTrainee',
-                        data: data
+                        data: {data:data, traineeId: traineeId}
                     });
             });
         };

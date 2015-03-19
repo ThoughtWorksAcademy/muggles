@@ -14,7 +14,6 @@ define(function (require) {
         });
         this.renderCourse = function () {
             var course = this.attr.course;
-            console.log(course)
             var groups = this.groupCheckpoints(this.attr.course.checkpoints);
 
             var html = template.render({
@@ -32,10 +31,10 @@ define(function (require) {
         this.handleChecked = function (event) {
             var id = event.target.id;
             var data = event.target.checked;
-            var userId = $('body').data('_id');
+            var userId = this.attr.traineeId;
             var courseId = this.attr.course._id;
 
-            $.ajax('/api/trainer/users/' + userId + '/course/' + courseId + '/checkpoints/' + id, {
+            $.ajax('/api/trainers/users/' + userId + '/course/' + courseId + '/checkpoints/' + id, {
                 method: 'patch',
                 data: {checked: data}
 
