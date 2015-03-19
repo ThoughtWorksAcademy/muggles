@@ -13,6 +13,7 @@ define(function (require) {
         });
 
         this.handleLogin = function () {
+            $('.app').find('#tip').text('');
             var username = this.select('username');
             var password = this.select('password');
             var userTypes = this.select('userType');
@@ -29,12 +30,16 @@ define(function (require) {
                 password: password.val(),
                 userType: user
             });
+
+            return false;
         };
 
 
         this.after('initialize', function () {
-            this.on(document, 'click',
-                {'uiLogin': this.handleLogin});
+            //this.on(document, 'click',
+            //    {'uiLogin': this.handleLogin});
+
+            this.on(document, 'submit', this.handleLogin);
         });
     }
 });
