@@ -11,10 +11,10 @@
                         <tbody>
                         {{#checkpoints}}
                         <tr>
-                            <td><input id="{{_id}}" class="checkpoint-item" {{#checked}}checked="checked" {{/checked}}
-                                {{^checked}}{{/checked}}
-                                {{#display}}disabled="disabled"{{/display}}{{^display}}{{/display}}
-                                type="checkbox">{{name}}
+                            <td><input id="{{_id}}" class="checkpoint-item"
+                                       {{#display}}disabled{{/display}}
+                                {{#checked}} checked="checked" {{/checked}}
+                                type="checkbox" >{{name}}
                             </td>
                         </tr>
                         {{/checkpoints}}

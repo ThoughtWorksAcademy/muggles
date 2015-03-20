@@ -66,6 +66,8 @@ define(function (require) {
             var self = this;
             _.forEach(checkpointList, function (checkpoint) {
                 checkpoint.checked = self.checked(checkpoint._id);
+                checkpoint.display = self.display(checkpoint._id);
+
             });
             return checkpoints;
         };
@@ -82,6 +84,19 @@ define(function (require) {
 
             return checked;
         };
+
+        this.display = function (id) {
+            var results = this.attr.data.data.result;
+            var display = false;
+            _.forEach(results, function (result) {
+                if (result.checkpointId == id) {
+                    display = result.display;
+                }
+            });
+
+            return display;
+        };
+        
         this.after('initialize', function () {
             this.renderCourse();
         });
