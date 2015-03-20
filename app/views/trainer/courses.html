@@ -1,28 +1,26 @@
-<div class="container">
-    <div class="row show-space">
-        <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">课程列表</div>
-                <div class="panel-body course-panel">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>课程名称</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        {{#courses}}
-                        <tr>
-                            <td>1</td>
-                            <td class="traineesOfCourse">
-                                <button id={{_id}} class="btn btn-success">{{name}}</button>
-                            </td>
-                        </tr>
-                        {{/courses}}
-                        </tbody>
-                    </table>
-                </div>
+<div class="row show-space">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">课程列表</div>
+            <div class="panel-body course-panel">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>课程名称</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#courses}}
+                    <tr>
+                        <td>1</td>
+                        <td class="traineesOfCourse">
+                            <button id={{_id}} class="btn btn-success">{{name}}</button>
+                        </td>
+                    </tr>
+                    {{/courses}}
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>
