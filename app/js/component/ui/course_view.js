@@ -96,7 +96,7 @@ define(function (require) {
 
             return display;
         };
-        
+
         this.after('initialize', function () {
             this.renderCourse();
         });
