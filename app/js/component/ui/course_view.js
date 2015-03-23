@@ -15,8 +15,9 @@ define(function (require) {
 
         this.renderCourse = function () {
             var course = this.attr.course;
+            console.log(course);
             var groups = this.groupCheckpoints(this.attr.course.checkpoints);
-
+            console.log(groups);
             var html = template.render({
                 groups: groups,
                 name: course.name,
@@ -50,12 +51,14 @@ define(function (require) {
         this.groupCheckpoints = function (checkpointList) {
             var self = this;
             var checkpoints = self.addChecked(checkpointList);
+            console.log(checkpoints);
 
             var groupCheckpoints = [];
-            var groupNames = _.uniq(_.pluck(checkpoints, 'type'));
-
-            _.forEach(groupNames, function (groupName) {
-                groupCheckpoints.push({groupName: groupName, checkpoints: _.where(checkpoints, {type: groupName})})
+            var types = _.uniq(_.pluck(checkpoints, 'type'), function (checkpointType) {
+                return checkpointType.name;
+            });
+            _.forEach(types, function (type) {
+                groupCheckpoints.push({groupName: type.name, checkpoints: _.where(checkpoints, {type: type})})
             });
 
             return groupCheckpoints;
