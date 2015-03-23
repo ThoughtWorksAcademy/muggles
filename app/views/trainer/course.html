@@ -8,13 +8,25 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">{{groupName}}</div>
                     <table class="table">
+                        <thead>
+                        <tr>
+                            <th>教师勾选</th>
+                            <th>学生勾选</th>
+                            <th>checkpoint</th>
+                        </tr>
+                        </thead>
                         <tbody>
                         {{#checkpoints}}
                         <tr>
                             <td><input id="{{_id}}" class="checkpoint-item"
-                                       {{#display}}disabled{{/display}}
-                                {{#checked}} checked="checked" {{/checked}}
-                                type="checkbox" >{{name}}
+                                       {{#trainerChecked}} checked="checked" {{/trainerChecked}}
+                                type="checkbox" >
+                            </td>
+                            <td>
+                                <input type="checkbox" {{#traineeChecked}} checked="checked" {{/traineeChecked}} disabled >
+                            </td>
+                            <td>
+                                {{name}}
                             </td>
                         </tr>
                         {{/checkpoints}}

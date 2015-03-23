@@ -66,13 +66,14 @@ define(function (require) {
             var checkpoints = checkpointList;
             var self = this;
             _.forEach(checkpointList, function (checkpoint) {
-                checkpoint.checked = self.checked(checkpoint._id);
+                checkpoint.traineeChecked = self.traineeChecked(checkpoint._id);
+                checkpoint.trainerChecked = self.trainerChecked(checkpoint._id);
                 checkpoint.display = self.display(checkpoint._id);
             });
             return checkpoints;
         };
 
-        this.checked = function (id) {
+        this.trainerChecked = function (id) {
             var results = this.attr.data.data.result;
             var checked = false;
 
@@ -85,6 +86,18 @@ define(function (require) {
             return checked;
         };
 
+        this.traineeChecked = function (id) {
+            var results = this.attr.data.data.result;
+            var checked = false;
+
+            _.forEach(results, function (result) {
+                if (result.checkpointId == id) {
+                    checked = result.traineeChecked;
+                }
+            });
+
+            return checked;
+        };
 
         this.display = function (id) {
             var results = this.attr.data.data.result;
