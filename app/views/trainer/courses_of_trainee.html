@@ -17,10 +17,10 @@
                         {{#courses}}
                         <tr>
                             <td class="courseOfTrainee">
-                                <button id="{{_id}}" type="button" class="btn btn-success">{{name}}</button>
+                                <button id="{{course._id}}" type="button" class="btn btn-success">{{course.name}}</button>
                             </td>
-                            <td>{{trainer}}</td>
-                            <td>{{sponsor}}</td>
+                            <td>{{trainer.username}}</td>
+                            <td>{{sponsor.username}}</td>
                         </tr>
                         {{/courses}}
                         </tbody>

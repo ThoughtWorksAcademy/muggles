@@ -13,6 +13,7 @@ define(function (require) {
 
         this.renderCheckpoints = function () {
             var courses = this.attr.coursesOfTrainee;
+            console.log(courses);
             var html = template.render({courses: courses});
             $('#app').html(html).fadeIn();
         };
