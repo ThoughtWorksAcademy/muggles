@@ -34,12 +34,16 @@ define(function (require) {
             return false;
         };
 
+        this.changeUrl = function () {
+            history.pushState({ path: this.path }, '', '/#login');
+        };
 
         this.after('initialize', function () {
-            //this.on(document, 'click',
-            //    {'uiLogin': this.handleLogin});
-
+            this.changeUrl();
             this.on(document, 'submit', this.handleLogin);
+            this.on(window, 'popstate', function () {
+                console.log('trigger pushStatus');
+            });
         });
     }
 });

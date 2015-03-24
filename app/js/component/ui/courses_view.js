@@ -54,7 +54,13 @@ define(function (require) {
             });
         };
 
+        this.changeUrl = function () {
+            history.pushState({ path: this.path }, '', '/#courses')
+        };
+
         this.after('initialize', function () {
+            this.changeUrl();
+
             this.on(document, 'click',
                 {'courseName': this.serveCourse});
             this.renderCourses();

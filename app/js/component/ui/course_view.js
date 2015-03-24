@@ -15,9 +15,7 @@ define(function (require) {
 
         this.renderCourse = function () {
             var course = this.attr.course;
-            console.log(course);
             var groups = this.groupCheckpoints(this.attr.course.checkpoints);
-            console.log(groups);
             var html = template.render({
                 groups: groups,
                 name: course.name,
@@ -51,7 +49,6 @@ define(function (require) {
         this.groupCheckpoints = function (checkpointList) {
             var self = this;
             var checkpoints = self.addChecked(checkpointList);
-            console.log(checkpoints);
 
             var groupCheckpoints = [];
             var types = _.uniq(_.pluck(checkpoints, 'type'), function (checkpointType) {

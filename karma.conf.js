@@ -1,4 +1,7 @@
-// Karma configuration file
+// Karma configuration
+//
+// For all available config options and default values, see:
+// http://karma-runner.github.io/0.10/config/configuration-file.html
 
 module.exports = function (config) {
     'use strict';
@@ -8,37 +11,69 @@ module.exports = function (config) {
         // base path, that will be used to resolve files and exclude
         basePath: '',
 
-        frameworks: ['requirejs', 'jasmine', 'mocha', 'sinon'],
+        // frameworks to use
+        frameworks: ['jasmine'],
 
         // list of files / patterns to load in the browser
         files: [
-            'app/bower_components/mocha-flight/lib/mocha-flight.js',
+            // loaded without require
+            'app/bower_components/jquery/dist/jquery.js',
+            'app/bower_components/hogan/web/builds/2.0.0/hogan-2.0.0.js',
+            'app/bower_components/jasmine-jquery/lib/jasmine-jquery.js',
+            'app/bower_components/jasmine-flight/lib/jasmine-flight.js',
 
-            {pattern: 'app/bower_components/**/*.js', included: false},
-            {pattern: 'test/mock/*.js', included: false},
-            {pattern: 'test/spec/*.js', included: false},
-            {pattern: 'app/js/component/**/*.js', included: false},
-            {pattern: 'app/js/page/*.js', included: false},
+            // hack to load RequireJS after the shim libs
+            'node_modules/requirejs/require.js',
+            'node_modules/karma-requirejs/lib/adapter.js',
+
+            // loaded with require
+            {pattern: 'app/bower_components/flight/**/*.js', included: false},
+            {pattern: 'app/js/**/*.js', included: false},
+            {pattern: 'test/spec/**/*.spec.js', included: false},
+
+            // get fixtures
+            { pattern: 'test/fixtures/**/*.html', included: false, served: true },
             'test/test-main.js'
         ],
 
-        // use dots reporter, as travis terminal does not support escaping sequences
-        // possible values: 'dots', 'progress', 'junit', 'teamcity'
-        // CLI --reporters progress
-        reporters: ['dots'],
-
-        // enable / disable watching file and executing tests whenever any file changes
-        // CLI --auto-watch --no-auto-watch
-        autoWatch: true,
-
-        // start these browsers
-        browsers: [
-            'Chrome',
-            'Firefox'
+        // list of files to exclude
+        exclude: [
+            'app/js/main.js'
         ],
 
-        // Auto run tests on start (when browsers are captured) and exit
-        // CLI --single-run --no-single-run
-        singleRun: false
+        // test results reporter to use
+        // possible values: 'dots', 'progress', 'junit', 'growl', 'coverage'
+        reporters: ['progress'],
+
+        // enable / disable watching file and executing tests whenever any file changes
+        autoWatch: true,
+
+        // Start these browsers, currently available:
+        // - Chrome
+        // - ChromeCanary
+        // - Firefox
+        // - Opera
+        // - Safari (only Mac)
+        // - PhantomJS
+        // - IE (only Windows)
+        browsers: [
+            'PhantomJS'
+        ],
+
+        // If browser does not capture in given timeout [ms], kill it
+        captureTimeout: 5000,
+
+        // Continuous Integration mode
+        // if true, it capture browsers, run tests and exit
+        singleRun: false,
+
+        // Karma will report all the tests that are slower than given time limit (in
+        // ms).
+        reportSlowerThan: 500,
+
+        // don't preprocess html files for jasmine-fixtures to work
+        preprocessors: {
+            '**/*.html': []
+        }
     });
 };

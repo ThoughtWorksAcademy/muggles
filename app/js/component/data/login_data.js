@@ -51,6 +51,8 @@ define(function (require) {
         this.after('initialize', function () {
             this.$tip = this.$node.find('#tip');
             this.on('uiLogin', this.handleLogin);
+
+
         });
     }
 });

@@ -12,7 +12,17 @@ define(function (require) {
             it('should be an Example component', function () {
                 expect(this.Component).to.equal(Example);
             });
+            //
+            //it('user login when trigger submit', function (done) {
+            //    setupComponent();
+            //    //this.component.trigger('submit');
+            //    //console.log(this.component);
+            //    done();
+            //    //expect(this.Component.handleLogin()).to.be(false);
+            //});
         });
+
+
         //
         //describe('bar', function() {
         //    it('bar() returns bar!', function() {
@@ -22,6 +32,5 @@ define(function (require) {
         //        expect(bar.baz()).to.be('baz!');
         //    });
         //});
-
     });
 });

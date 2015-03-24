@@ -1,30 +1,26 @@
 'use strict';
 
-mocha.setup('mocha-flight');
+var tests = Object.keys(window.__karma__.files).filter(function (file) {
+    return (/\.spec\.js$/.test(file));
+});
 
 requirejs.config({
-    baseUrl: '/base',
+    // Karma serves files from '/base'
+    baseUrl: '/base/app/bower_components',
 
     paths: {
-        'jquery': 'app/bower_components/jquery/dist/jquery',
-        'flight': 'app/bower_components/flight',
-        'lodash': 'app/bower_components/lodash',
-        'ui': 'app/js/component/ui',
-        'chai': 'app/bower_components/chai/chai',
-        'mock': 'test/mock',
-        'lib': 'app/lib'
+        'component_ui': '../js/component/ui',
+        'component_data': '../js/component/data',
+        'page': '../js/page',
+        'js/templates': '../js/templates'
     },
 
-    // ask Require.js to load these files (all dependent libs and our tests)
-    deps: (function () {
-        var libs = ['jquery'],
-            tests = Object.keys(window.__karma__.files).filter(function (file) {
-                return (/\.spec\.js$/.test(file));
-            });
-
-        return Array.prototype.concat(libs, tests);
-    }()),
+    // ask Require.js to load these files (all our tests)
+    deps: tests,
 
     // start test run, once Require.js is done
     callback: window.__karma__.start
 });
+
+window.jasmine.getFixtures().fixturesPath = 'base/test/fixtures/';
+window.__APP = {}; // TODO: remove global
