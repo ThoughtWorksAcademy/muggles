@@ -35,14 +35,19 @@ define(function (require) {
         };
 
         this.changeUrl = function () {
-            history.pushState({ path: this.path }, '', '/#login');
+            history.pushState({ path: '/#login' }, '', '/#login');
         };
 
         this.after('initialize', function () {
             this.changeUrl();
             this.on(document, 'submit', this.handleLogin);
             this.on(window, 'popstate', function () {
-                console.log('trigger pushStatus');
+                console.log('trigger popstate');
+                console.log(history.state);
+            });
+
+            this.on(window, 'pushstate', function () {
+                console.log('trigger pushstate');
             });
         });
     }
