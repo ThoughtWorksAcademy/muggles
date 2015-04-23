@@ -17,15 +17,15 @@ define(function (require) {
     function switchPage() {
 
         this.defaultAttrs({
-            'loginPage': loginPage,
-            'courses': courses,
-            'course': course,
-            'station': station,
-            'stationTrainees': stationTraineesPage,
-            'stationCourses': stationCourses,
-            'coursesOfTrainee': coursesOfTrainee,
-            'courseOfTrainee': courseOfTrainee,
-            'traineesOfCourse': traineesOfCourse,
+            'loginPage': pages.loginPage,
+            'courses': pages.courses,
+            'course': pages.course,
+            'station': pages.station,
+            'stationTrainees': pages.stationTrainees,
+            'stationCourses': pages.stationCourses,
+            'coursesOfTrainee': pages.coursesOfTrainee,
+            'courseOfTrainee': pages.courseOfTrainee,
+            'traineesOfCourse': pages.traineesOfCourse,
             'loginInit': pages.login
         });
 

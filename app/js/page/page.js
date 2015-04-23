@@ -9,7 +9,6 @@ define(function (require) {
         TraineesOfCourse = require('component/ui/trainees_of_course');
 
 
-
     var templates = require('../js/templates');
     var pages = {};
 
@@ -33,6 +32,7 @@ define(function (require) {
 
     pages.courses = function (data) {
         $('#app').fadeOut(function () {
+            var template = templates['courses'].render();
             $('#app').html(template).fadeIn();
             CoursesView.attachTo('#app');
         });
