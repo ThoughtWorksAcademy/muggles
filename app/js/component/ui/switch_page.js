@@ -11,6 +11,7 @@ define(function (require) {
         coursesOfTrainee = require('../../page/courses_of_trainee'),
         courseOfTrainee = require('../../page/course_of_trainee'),
         traineesOfCourse = require('../../page/trainees_of_course');
+    var pages = require('../../page/page');
     return defineComponent(switchPage);
 
     function switchPage() {
@@ -24,15 +25,14 @@ define(function (require) {
             'stationCourses': stationCourses,
             'coursesOfTrainee': coursesOfTrainee,
             'courseOfTrainee': courseOfTrainee,
-            'traineesOfCourse': traineesOfCourse
+            'traineesOfCourse': traineesOfCourse,
+            'loginInit': pages.login
         });
 
         this.after('initialize', function () {
             this.on('uiSwitchPage', function (e, page) {
                 this.attr[page.name](page.data);
             });
-
-
         });
     }
 });

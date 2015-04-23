@@ -8,7 +8,7 @@ define(function (require) {
     function authenticate() {
 
         this.isAuthenticatedUser = function () {
-            this.trigger('uiSwitchPage', {name: 'loginPage'});
+            this.trigger('uiSwitchPage', {name: 'loginInit'});
         };
 
         this.after('initialize', function () {
