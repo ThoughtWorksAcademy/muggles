@@ -9,7 +9,7 @@ define(function (require) {
 
     function initialize(data) {
         $('#app').fadeOut(function () {
-            $('#app').html(template).fadeIn();
+            //$('#app').html(template).fadeIn();
             StationsTrainees.attachTo('#app', {trainees: data.data, stationName: data.stationName});
         });
     }

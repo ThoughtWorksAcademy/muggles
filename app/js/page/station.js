@@ -10,7 +10,6 @@ define(function (require) {
     function initialize() {
         $('#app').fadeOut(function () {
             $('#app').html(template).fadeIn();
-
             StationsView.attachTo('#app');
         });
     }
