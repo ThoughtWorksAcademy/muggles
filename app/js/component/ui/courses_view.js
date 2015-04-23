@@ -55,7 +55,7 @@ define(function (require) {
         };
 
         this.changeUrl = function () {
-            history.pushState({ path: this.path }, '', '/#courses')
+            history.pushState({path: this.path}, '', '/#courses')
         };
 
         this.after('initialize', function () {

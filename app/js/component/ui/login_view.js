@@ -35,7 +35,7 @@ define(function (require) {
         };
 
         this.changeUrl = function () {
-            history.pushState({ path: '/#login' }, '', '/#login');
+            history.pushState({path: '/#login'}, '', '/#login');
         };
 
         this.after('initialize', function () {
