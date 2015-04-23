@@ -1,16 +1,7 @@
 define(function (require) {
     'use strict';
 
-    var defineComponent = require('flight/lib/component'),
-        loginPage = require('../../page/login_page'),
-        courses = require('../../page/courses'),
-        course = require('../../page/course'),
-        station = require('../../page/station'),
-        stationTraineesPage = require('../../page/station_trainees_page'),
-        stationCourses = require('../../page/station_courses'),
-        coursesOfTrainee = require('../../page/courses_of_trainee'),
-        courseOfTrainee = require('../../page/course_of_trainee'),
-        traineesOfCourse = require('../../page/trainees_of_course');
+    var defineComponent = require('flight/lib/component');
     var pages = require('../../page/page');
     return defineComponent(switchPage);
 
