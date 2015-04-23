@@ -27,7 +27,6 @@ define(function (require) {
 
     pages.courseOfTrainee = function (data) {
         $('#app').fadeOut(function () {
-            $('#app').html(templates['trainer/course'].render()).fadeIn();
             CourseOfTrainee.attachTo('#app', {course: data.data.course, data: data, traineeId: data.traineeId});
         });
     };
@@ -41,8 +40,6 @@ define(function (require) {
 
     pages.coursesOfTrainee = function (data) {
         $('#app').fadeOut(function () {
-            var template = templates['trainer/courses_of_trainee'].render();
-            $('#app').html(template).fadeIn();
             CoursesOfTrainee.attachTo('#app', {coursesOfTrainee: data.data, traineeId: data.traineeId});
         });
     };
@@ -57,24 +54,18 @@ define(function (require) {
 
     pages.stationCourses = function (data) {
         $('#app').fadeOut(function () {
-            var template = templates['trainer/stations'].render();
-            $('#app').html(template).fadeIn();
             StationsCourses.attachTo('#app', {stationCourses: data.data, id: data.id});
         });
     };
 
     pages.stationTrainees = function (data) {
         $('#app').fadeOut(function () {
-            var template = templates['trainer/stations'].render();
-            $('#app').html(template).fadeIn();
             StationsTrainees.attachTo('#app', {trainees: data.data, stationName: data.stationName});
         });
     };
 
     pages.traineesOfCourse = function (data) {
         $('#app').fadeOut(function () {
-            var template = templates['trainer/trainees_of_course'].render();
-            $('#app').html(template).fadeIn();
             TraineesOfCourse.attachTo('#app', {trainees: data.data, courseId: data.id});
         });
     };
